@@ -26,7 +26,7 @@ SECRET_KEY = 'w7a&5=&et$20gxr$irm!i*_%a^lsmvcgphdb3h5_%&yw5&y3$l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = DEBUG
+# TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['lpcopy24.ru', 'www.lpcopy24.ru', '188.166.80.61']
 
@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'bootstrapform',
 
 )
 
