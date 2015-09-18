@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import tarfile, os, subprocess
 import sqlite3
+import random
+import string
 
 
 class SiteParser:
@@ -12,40 +14,17 @@ class SiteParser:
         pass
 
     def save_site(self, url):
-        subprocess.call(self.command + url + self.arch_folder, shell=True)
+        folder = ''.join(
+            random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for x in range(16))
+        print(folder)
+        os.mkdir("static/sites/" + folder)
+        subprocess.call(self.command + url + self.arch_folder + '/' + folder, shell=True)
 
+        dirs = os.listdir("static/sites/" + folder)
 
-        # dirs = os.listdir("static/sites")
-        #
-        # if len(dirs) > 0:
-        #     tar = tarfile.open("static/tars/" + dirs[0] + ".tar.gz", "w:gz")
-        #     tar.add("static/sites/" + dirs[0] + "/")
-        #
-        #     tar.close()
-        #     print("end")
+        if len(dirs) > 0:
+            tar = tarfile.open("static/tars/" + folder + ".tar.gz", "w:gz")
+            tar.add("static/sites/" + folder + '/' + dirs[0] + "/", folder)
 
-
-class DataBaseController:
-    db = sqlite3.connect("db.sqlite3")
-
-    def __init__(self):
-        pass
-
-    def write_base(self, url, path_dir):
-        url = "'" + url + "'"
-        path_dir = "'" + path_dir + "'"
-        cur = self.db.cursor()
-        print("INSERT INTO landscapes (url, path_dir) VALUES (" + url + ", " + path_dir + ");")
-        cur.execute("INSERT INTO landscapes (url, path_dir) VALUES (" + url + ", " + path_dir + ");")
-
-        self.db.commit()
-
-    def read_base(self, condition="*"):
-        cur = self.db.cursor()
-        print("SELECT " + condition + " FROM landscapes")
-        if not condition == "*":
-            cur.execute("SELECT * FROM landscapes WHERE " + condition)
-        else:
-            cur.execute("SELECT * FROM landscapes")
-        data = cur.fetchall()
-        return data
+            tar.close()
+            print("end")
