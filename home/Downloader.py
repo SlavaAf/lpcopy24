@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import tarfile, os
+import tarfile, os, subprocess
 import sqlite3
 
 
@@ -12,9 +12,9 @@ class SiteParser:
         pass
 
     def save_site(self, url):
-        # subprocess.call([self.command + url + self.arch_folder], shell=True)
-        os.system(self.command + url + self.arch_folder)
-        print(123)
+        subprocess.call(self.command + url + self.arch_folder, shell=True)
+
+
         # dirs = os.listdir("static/sites")
         #
         # if len(dirs) > 0:
