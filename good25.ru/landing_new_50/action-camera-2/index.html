@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; utf=8"/>
+	<title>SJCAM SJ4000</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="lightbox/js/lightbox.min.js"></script>
+	<link href="lightbox/css/lightbox.css" rel="stylesheet" />
+	<script type="text/javascript">
+	function CountBox() {
+		dateNow = new Date();
+		amount = ((23 - dateNow.getHours())*60*60 + (59 - dateNow.getMinutes())*60 + (60 - dateNow.getSeconds()))*1000;
+		delete dateNow;
+		if (amount < 0) {
+			out = "<div class='countbox-num'><div class='countbox-days1'><span></span>0</div><div class='countbox-days2'><span></span>0</div><div class='countbox-days-text'></div></div>" + 
+			"<div class='countbox-space'></div>" +
+			"<div class='countbox-num'><div class='countbox-hours1'><span></span>0</div><div class='countbox-hours2'><span></span>0</div><div class='countbox-hours-text'></div></div>" + 
+			"<div class='countbox-space'></div>" +
+			"<div class='countbox-num'><div class='countbox-mins1'><span></span>0</div><div class='countbox-mins2'><span></span>0</div><div class='countbox-mins-text'></div></div>" + 
+			"<div class='countbox-space'></div>" +
+			"<div class='countbox-num'><div class='countbox-secs1'><span></span>0</div><div class='countbox-secs2'><span></span>0</div><div class='countbox-secs-text'></div></div>";
+			var list = document.getElementsByClassName("countbox");
+			for (var i = 0; i < list.length; i++) {
+				list[i].innerHTML = out;
+			}
+			setTimeout("CountBox()", 10000)
+		} else {
+			days = 0;
+			days1 = 0;
+			days2 = 0;
+			hours = 0;
+			hours1 = 0;
+			hours2 = 0;
+			mins = 0;
+			mins1 = 0;
+			mins2 = 0;
+			secs = 0;
+			secs1 = 0;
+			secs2 = 0;
+			out = "";
+			amount = Math.floor(amount / 1e3);
+			days = Math.floor(amount / 86400);
+			days1 = (days >= 10) ? days.toString().charAt(0) : '0';
+			days2 = (days >= 10) ? days.toString().charAt(1) : days.toString().charAt(0);
+			amount = amount % 86400;
+			hours = Math.floor(amount / 3600);
+			hours1 = (hours >= 10) ? hours.toString().charAt(0) : '0';
+			hours2 = (hours >= 10) ? hours.toString().charAt(1) : hours.toString().charAt(0);
+			amount = amount % 3600;
+			mins = Math.floor(amount / 60);
+			mins1 = (mins >= 10) ? mins.toString().charAt(0) : '0';
+			mins2 = (mins >= 10) ? mins.toString().charAt(1) : mins.toString().charAt(0);
+			amount = amount % 60;
+			secs = Math.floor(amount);
+			secs1 = (secs >= 10) ? secs.toString().charAt(0) : '0';
+			secs2 = (secs >= 10) ? secs.toString().charAt(1) : secs.toString().charAt(0);
+			out = "<div class='countbox-num'><div class='countbox-hours1'><span></span>" + hours1 + "</div><div class='countbox-hours2'><span></span>" + hours2 + "</div><div class='countbox-hours-text'></div></div>" + 
+			"<div class='countbox-space'></div>" +
+			"<div class='countbox-num'><div class='countbox-mins1'><span></span>" + mins1 + "</div><div class='countbox-mins2'><span></span>" + mins2 + "</div><div class='countbox-mins-text'></div></div>" + 
+			"<div class='countbox-space'></div>" +
+			"<div class='countbox-num'><div class='countbox-secs1'><span></span>" + secs1 + "</div><div class='countbox-secs2'><span></span>" + secs2 + "</div><div class='countbox-secs-text'></div></div>";
+			var list = document.getElementsByClassName("countbox");
+			for (var i = 0; i < list.length; i++) {
+				list[i].innerHTML = out;
+			}
+			setTimeout("CountBox()", 1e3)
+		}
+	}
+	window.onload = function () {
+		CountBox()
+	}
+	</script>
+	<script language="JavaScript">
+<!--
+dayarray=new Array("воскресенье","понедельник","вторник","среда","четверг","пятница","суббота")
+montharray=new Array ("января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря")
+ndata=new Date();
+day=dayarray[ndata.getDay()];
+month=montharray[ndata.getMonth()];
+date=ndata.getDate();
+year=ndata.getYear();
+hours = ndata.getHours();
+mins = ndata.getMinutes();
+secs = ndata.getSeconds();
+if (hours < 10) {hours = "0" + hours }
+if (mins < 10) {mins = "0" + mins }
+if (secs < 10) {secs = "0" + secs }
+datastr=(""+ date +" "+ month +"" )
+-->
+	</script>
+</head>
+<body>
+<div class="fon1" style="height: 160px;">
+	<div class="fon1_p" style="height: 160px;">
+		<div class="logo">
+			<p style="font-size: 32px">SJCAM</p>
+			<p>Продажа оригинальных<br>камер SJCAM SJ4000</p>
+			с доставкой по Москве
+		</div>
+
+		<div class="contacts" style="padding-top: 33px; float: right;">
+			<div class="tel2"><a href="tel: +70000000000">+7(000)000-00-00</a></div>
+			<div class="clear"></div>
+			<!--<div class="tel_line"></div>-->
+			<div class="tel_time" style="margin: 0px 0px 16px;">Время работы с 9:00 до 21:00</div>
+			<div class="clear"></div>
+			<div class="tel_butt"><a href="#win1">Заказать звонок</a></div>
+		</div>
+	</div>
+</div>
+<div class="fon2">
+	<div class="fon2_p">
+		<div class="fon2_title">Продажа оригинальных камер <span>SJCAM и SJ4000</span><br>с доставкой по Москве</div>
+		<div class="prem">Преимущества</div>
+		<div class="prem1">Качество съёмки уровня GoPro за меньшие деньги<br>(видео Full HD 1080p)</div>
+		<div class="prem2">Аквабокс и 12 креплений в комплекте</div>
+		<div class="prem2">Можно использовать в качестве видеорегистратора</div>
+		<div class="prem2">Доставка в день заказа</div>
+		<div class="clear"></div>
+		<div class="form1">
+			<div class="form">
+				<iframe src="form4.html" width="424px" height="342px" frameborder="0" scrolling="no"></iframe>
+			</div>
+			<div class="price">5350 руб.</div>
+			<div class="timer"><div class="countbox"></div></div>
+			<div class="akciya">Акция</div>
+		</div>
+	</div>
+</div>
+<div class="fon3">
+	<div class="video"><iframe width="580" height="321" src="https://www.youtube.com/embed/T4u0csvW_bo" frameborder="0" allowfullscreen></iframe></div>
+</div>
+<div class="fon4">
+	<div class="fon4_p">
+		<div class="cam">
+			<div class="cam_title">SJCAM SJ4000 Wi-Fi</div>
+			<div class="cam_img"><img src="images/cam1.png"></div>
+			<div class="cam_price1"><strike>8750 руб.</strike></div>
+			<div class="cam_price2">6990 руб.</div>
+			<div class="cam_butt"><a href="#win2">Купить</a></div>
+		</div>
+		<div class="cam">
+			<div class="cam_title">SJCAM SJ4000</div>
+			<div class="cam_img"><img src="images/cam2.png"></div>
+			<div class="cam_price1"><strike>6690 руб.</strike></div>
+			<div class="cam_price2">5350 руб.</div>
+			<div class="cam_butt"><a href="#win3">Купить</a></div>
+		</div>
+		<div class="form2">
+			<div class="form2_desc">
+				<div class="desc1">Только сейчас действует акция со</div>
+				<div class="desc2">скидкой <span>20%</span></div>
+				<div class="desc3">Закажи товар прямо сейчас<br>и получи доставку сегодня</div>
+				<div class="desc4">Акция действует до <script language="JavaScript">
+<!--
+document.write(datastr);
+-->
+</script></div>
+				<div class="timer2"><div class="countbox"></div></div>
+				<div class="form_p">
+					<iframe src="form5.html" width="478px" height="342px" frameborder="0" scrolling="no"></iframe>
+				</div>
+		</div>
+	</div>
+</div>
+<div class="fon5">
+	<div class="fon5_p">
+		<div class="title1">Каталог товаров</div>
+		<div class="cat1">
+			<div class="cat_title">SJCAM SJ4000 Wi-Fi</div>
+			<div class="cat_img"><img src="images/cam1.png"></div>
+			<div class="cat_title2">Описание</div>
+			<div class="cat_desc">
+				LCD дисплей: 1.5 дюймов (4 : 3)<br>
+				Линза: 170°A+ HD "FishEye"<br>
+				Процессор: Novatek NT96650<br>
+				Оптический зум: 4X<br>
+				Разрешение видео:<br>
+				1920*1080x30 fps / 1080*720x60<br>
+				fps / 848*480 / 640*480<br>
+				Формат видео: MOV<br>
+				Видео кодек: H.264<br>
+				Разрешение фото: 12M / 8M / 5M<br>
+				USB 2.0<br>
+				Питание: 5V 900MAH<br>
+				Емкость аккумулятора: 900MAH<br>
+				Время работы от аккумулятора:<br>
+				до 90 минут видеозаписи<br>
+				Поддержка карт Micro SD до 32GB<br>
+				Погружение под воду: до 30 метров<br>
+				Вес камеры - 44 г, с аккумулятором - 58 г.<br>
+				Размер камеры 29.8 x 59.2 x 41 мм<br>
+				Гарантия производителя - 1 год
+			</div>
+			<div class="preim">Преимущества</div>
+			<div class="p_gal"><img src="images/gal.png"> Съёмка Full HD 1080p видео со звуком уровня Go Pro</div>
+			<div class="p_gal"><img src="images/gal.png"> Wi-Fi модуль для управления со смартфона и загрузки видео с камеры на смартфон</div>
+			<div class="p_gal"><img src="images/gal.png"> В комплекте - 12 креплений и аквабокс</div>
+			<div class="p_gal"><img src="images/gal.png"> Циклическая запись видеов режиме видеорегистратора</div>
+			<div class="p_gal"><img src="images/gal.png"> Гарантия SJCAM на камеры SJ4000 от производителя: 1 год</div>
+		</div>
+		<div class="cat2">
+			<iframe src="form6.html" width="350px" height="342px" frameborder="0" scrolling="no"></iframe>
+		</div>
+		<div class="cat3">
+			<div class="cat_title">SJCAM SJ4000</div>
+			<div class="cat_img"><img src="images/cam2.png"></div>
+			<div class="cat_title2">Описание</div>
+			<div class="cat_desc">
+				LCD дисплей: 1.5 дюймов (4 : 3)<br>
+				Линза: 170°A+ HD "FishEye"<br>
+				Процессор: Novatek NT96650<br>
+				Оптический зум: 4X<br>
+				Разрешение видео:<br>
+				1920*1080x30 fps / 1080*720x60<br>
+				fps / 848*480 / 640*480<br>
+				Формат видео: MOV<br>
+				Видео кодек: H.264<br>
+				Разрешение фото: 12M / 8M / 5M<br>
+				USB 2.0<br>
+				Питание: 5V 900MAH<br>
+				Емкость аккумулятора: 900MAH<br>
+				Время работы от аккумулятора:<br>
+				до 90 минут видеозаписи<br>
+				Поддержка карт Micro SD до 32GB<br>
+				Погружение под воду: до 30 метров<br>
+				Вес камеры - 44 г, с аккумулятором - 58 г.<br>
+				Размер камеры 29.8 x 59.2 x 41 мм<br>
+				Гарантия производителя - 1 год
+			</div>
+			<div class="preim">Преимущества</div>
+			<div class="p_gal"><img src="images/gal.png"> Съёмка Full HD 1080p видео со звуком уровня Go Pro</div>
+			<div class="p_gal"><img src="images/gal.png"> В комплекте - 12 креплений и аквабокс</div>
+			<div class="p_gal"><img src="images/gal.png"> Циклическая запись видеов режиме видеорегистратора</div>
+			<div class="p_gal"><img src="images/gal.png"> Гарантия SJCAM на камеры SJ4000 от производителя: 1 год</div>
+		</div>
+		<div class="clear"></div>
+		<div class="title1_2">Комплектация</div>
+		<div align="center"><img src="images/compl.jpg"></div>
+		<div class="clear"></div>
+		<div class="title1_2">Схема работы</div>
+		<ul class="shema">
+			<li class="shem1">Заказывая товар у Нас - это гарантия качественной продукции и быстрой доставки.</li>
+			<li class="strel"></li>
+			<li class="shem2">Свяжитесь с нашими менеджерами по телефону <span>+7(000)000-00-00</span></li>
+			<li class="strel"></li>
+			<li class="shem3">Получите бесплатную консультацию и сделайте свой заказ</li>
+			<li class="strel"></li>
+			<li class="shem4">Оплатите покупку удобным Вам способом</li>
+			<li class="strel"></li>
+			<li class="shem5">Выберете время и место доставки</li>
+		</ul>
+	</div>
+</div>
+<div class="fon6">
+	<div class="fon6_p">
+		<div class="form_p2">
+			<iframe src="form7.html" width="424px" height="342px" frameborder="0" scrolling="no"></iframe>
+		</div>
+	</div>
+</div>
+<div class="fon7">
+	<div class="fon7_p">
+		<div class="dostavka">
+			<div class="dostavka_title">Доставка</div>
+			<div class="dostavka_punkt">Требуется срочная доставка?<br>Мы отправим мгновенно Ваш заказ курьером по Москве уже сегодня!</div>
+			<div class="dostavka_punkt">Также мы доставляем товары во все регионы РФ.<br>Свяжитесь с нашими менеджерами и они предоставят подробную информацию.</div>
+			<div class="dostavka_desc">Доставка по Москве - 300 рублей.</div>
+		</div>
+		<div class="otzivi">
+			<div class="otzivi_title">Отзывы наших клиентов</div>
+			<div class="otziv1">
+				<div class="otz_name">Михаил</div>
+				<div class="otz_text">Заказал экшн камеру днём и уже<br>вечером мне её привезли.<br>Спасибо всё на высшем уровне!</div>
+			</div>
+			<div class="otziv2">
+				<div class="otz_name">Евгений</div>
+				<div class="otz_text">Очень понравилось качество<br>обслуживания, всё грамотно<br>объяснили, вовремя камеру доставили, пользуюсь и наслаждась качеством SJ4000.</div>
+			</div>
+			<div class="otziv3">
+				<div class="otz_name">Александр</div>
+				<div class="otz_text">Данная камера отличного качества и стоит в разы дешевле аналога GoPro. Полузуюсь уже три недели, работает отлично без нареканий.</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="fon8">
+	<div class="fon8_p">
+		<div class="form_p3">
+			<iframe src="form8.html" width="424px" height="342px" frameborder="0" scrolling="no"></iframe>
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<div class="footer_p">
+		<div class="logo2">
+			<b style="font-size: 32px">SJCAM</b><br>
+			Продажа оригинальных камер SJCAM SJ4000<br>
+			с доставкой по Москве
+		</div>
+		<div class="contacts2">
+			<div class="tel_2">Телефон</div>
+			<div class="tel_f"><a href="tel: +70000000000">+7(000)000-00-00</a></div>
+			<div class="clear"></div>
+			<div class="tel_time_2">Время работы с 9:00 до 21:00</div>
+			<div class="clear"></div>
+			<div class="tel_butt_2"><a href="#win1">Заказать звонок</a></div>
+		</div>
+	</div>
+</div>
+
+<a href="#x" class="overlay" id="win1"></a>
+<div class="popup1">
+	<iframe src="form1.html" width="424px" height="342px" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<a href="#x" class="overlay" id="win2"></a>
+<div class="popup1">
+	<iframe src="form2.html" width="424px" height="342px" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<a href="#x" class="overlay" id="win3"></a>
+<div class="popup1">
+	<iframe src="form3.html" width="424px" height="342px" frameborder="0" scrolling="no"></iframe>
+</div>
+</body>
+</html>

@@ -1,0 +1,434 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	 background:#E9E9E9;
+	 color: #404040;
+	 text-align:center;
+	 padding:0;
+	 margin:0;
+	 background: url("grey-bg.png");
+	 font-family: Arial, Helvetica, sans-serif;
+	 font-size: 13px;
+	 line-height: 1.25em;
+ }
+ 
+a {
+	color: #cc1a21;
+	text-decoration: none;
+}
+
+a:hover  {
+	color: #666666;
+	text-decoration: none;
+}
+
+	a img {
+		border: 0;
+	}
+
+h1 {
+	font-size: 29px;
+	line-height: 1.1em;
+	letter-spacing: -1px;
+	color: #333333;
+	margin-top: 0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+h2 {
+	font-size: 17px;
+	line-height: 1.1em;
+	letter-spacing: -1px;
+	color: #333333;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+h3 {
+	font-size: 16px;
+	color: #333333;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+textarea, field {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	line-height: 1.25em;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.center {
+	text-align: center;
+}
+
+p.center {
+	text-align: center;
+}
+
+img.left {
+	float: left;
+	margin: 0 12px 5px 0;
+}
+
+img.right {
+	float: right;
+	margin: 0 0 5px 12px;
+}
+
+.pink {
+	color: #fa4b6a;
+	font-weight: 400;
+}
+
+ul.arrow, ul.dot {
+	list-style-type: none;
+	margin: 15px 0;
+	padding: 0;
+}
+
+ul.arrow li {
+	background: url("bullet-arrow.png") no-repeat 0 6px;
+	padding: 3px 3px 3px 18px;
+	font-weight: bold;
+}
+
+ul.dot {
+	background: url("bullet-orangedot.png") no-repeat 0 7px;
+	padding: 3px 3px 3px 15px;
+	font-weight: bold;
+}
+
+ul.double li {
+	display: block;
+	width: 46%;
+	float: left;
+}
+
+ul.triple li {
+	display: block;
+	width: 30%;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+/* Layout */ 
+
+#container {
+	text-align:left;
+	width:965px;
+	margin:0 auto 20px auto;
+ }
+ 
+.shadowBox {
+	background: #FFF;
+	-moz-border-radius: 7px;  
+    -webkit-border-radius: 7px; 
+	border-radius: 7px;
+	border: 1px solid #FFF;
+	-moz-box-shadow: 0px 0px 10px 0px #DDD, inset 0 0 8px 3px #f7f7f7;
+	-webkit-box-shadow: 0px 0px 10px 0px #DDD, inset 0 0 8px 3px #f7f7f7;
+	box-shadow: 0px 0px 10px 0px #DDD, inset 0 0 8px 3px #f7f7f7;
+	padding: 15px;
+	margin-top: 15px;
+}
+
+	.greyBox {
+		border: 1px solid #e2e2e2;
+		-moz-border-radius: 4px;  
+		-webkit-border-radius: 4px; 
+		border-radius: 4px;
+		padding: 15px;
+	}
+	
+	.outerGreyBox {
+		border: 1px solid #e2e2e2;
+		background: #f6f6f6;
+		-moz-border-radius: 4px;  
+		-webkit-border-radius: 4px; 
+		border-radius: 4px;
+		padding: 5px;
+	}
+	
+	.outerGreyBox .greyBox {
+		background: #FFF;
+	}
+	
+#header {
+	position: relative;
+	z-index: 100;
+}
+	
+/* Content */
+
+#logoBox {
+	position: relative;
+}
+
+	#headTop {
+		background: url("banner_head.png");
+		width: 186px;
+		height: 35px;
+		position: absolute;
+		top: -19px;
+		left: 423px;
+		z-index: 10;
+	}
+
+#cordially {
+	background: url("woman1.jpg") no-repeat 20px 20px;
+	padding: 35px 25px 35px 275px;
+}
+
+.pinkHeader {
+	background: url("pink-grad.png");
+	padding: 15px;
+	color: #FFF;
+	font-weight: 800;
+	font-size: 29px;
+	text-align: center;
+}
+
+#targetBox {
+	background: url("woman3.jpg") 20px 340px no-repeat #FFF;
+}
+
+	#longLasting {
+		margin-left: 320px;
+		margin-bottom: 125px;
+		}
+		
+	#longLasting h1.pink {
+		margin-left: 35px;
+	}
+	
+	#longLasting ul {
+		margin-left: 135px;
+	}
+	
+	#longLasting ul li {
+		font-size: 18px;
+		margin-bottom: 5px;
+	}
+
+#targetContent {
+	width: 550px;
+}
+
+#myth {
+	background: url("adonis.jpg") no-repeat 15px 15px;
+	padding: 40px 20px 20px 335px;
+}
+
+	#myth p, #myth * p {
+		padding: 5px 0;
+	}
+
+	#mythIndent {
+		margin-left: 140px;
+	}
+	
+#doctor {
+	/*padding-right: 295px;*/
+	background: url("doctor.jpg") no-repeat top right;
+}
+
+.doctorText {
+	margin-right: 295px;
+}
+
+	#decelerine {
+		width: 550px;
+		margin-top: 20px;
+	}
+	
+	#telocapil {
+		width: 427px;
+		float: left !important;
+		margin-right: 20px;
+		margin-top: 20px;
+		}
+	
+	#pilisoft {
+		width: 427px;
+		float: left !important;
+		margin-top: 20px;
+		}
+		
+	.studyButton {
+		text-align: right;
+		margin: 0;
+		}
+		
+	#before_after {
+		margin: 20px auto 39px;
+	}
+	
+#startNow {
+	position: relative;
+}
+	
+#modelFoot {
+	position: relative;
+	top: -29px;
+	left: -58px;
+	margin-bottom: -60px;
+}
+	
+/* Form Styles */
+
+#formContainer {
+	width: 292px;
+	position: absolute;
+	z-index: 200;
+	top: -120px;
+	right: -12px;
+}
+#formContainer1 {
+	width: 292px;
+	position: absolute;
+	z-index: 200;
+	top: 12px;
+	right: -335px;
+}
+.bgr{
+ background: url("female22.png");   
+}
+#order_form {
+	background: url("formbg-1.png");
+	padding: 75px 25px 0;
+}
+
+	.formLine {
+		display: block;
+		padding-top: 5px;
+                padding-left:4px;
+                padding-bottom: 2px;
+	}
+	
+		.formLine label {
+			display: block;
+			width: 55px;
+			text-align: right;
+			color: #666;
+			font-size: 11px;
+			margin-right: 12px;
+			float: left;
+		}
+		
+		.formLine input, .formLine select {
+			width: 230px;	
+                        height: 28px;
+                        border-radius: 6px;
+                        margin-top: 7px;
+                        font-size: 16px;
+		}
+		
+		.formLine label * {
+			text-align: right;
+			color: #666;
+			font-size: 11px;
+		}
+		
+	#billingLink, #billingLink a {
+		font-size: 11px;
+		color: #F60;
+		text-align: center;
+		line-height: 0.9em;
+		margin: 6px 0;
+		}
+
+	#showhide {
+		display: none;
+		padding-bottom: 15px;
+	}
+	
+		#showhide h4 {
+			color: #666;
+			margin: 6px 0;
+			text-align: center;
+			
+		}
+	
+	#submitButton {
+		position: relative;
+		}
+	
+	#formArrow {
+		position: absolute;
+		top: 20px;
+		right: -29px;
+		}
+		
+	#formBottom {
+		background: url("formbg-2.png");
+		width: 292px;
+		height: 29px;
+	}
+	
+	.fieldError {
+  background-color: #ffb;
+}
+
+	
+	  #alertBoxContent { text-align: left }
+	  #alertBoxContent ul { margin: 10px; }
+		#alertBoxContent ul li { margin-left: 20px; }	
+
+
+
+
+#nhsbox{
+	background:url("nhs-singup-banner.png") no-repeat; 
+width:975px; 
+height:170px; 
+margin-bottom:40px!important;
+margin:auto;
+margin-top:-30px;
+}
+#nhs-newsletter{
+	width:270px;
+	padding:10px 0 0 430px;
+}
+#nhs-newsletter form{
+	padding:2px 0 2px 7px;
+}
+#nhs-newsletter input{
+	margin:4px 0 4px 3px;
+	background:#F6F6F6;
+	border:1px solid #CCC;
+	padding:4px 3px!important;
+	width:270px;
+	float:left;
+}
+#nhs-newsletter .button{
+	background:#698752;
+	border:1px solid #CCC;
+	padding:3px 6px;
+	color:#fff;
+	width:278px!important;
+	height:30px!important;
+}
+
+.butonn{
+  background:url(form_button.png)no-repeat;
+  width:249px;
+  height:75px;
+  border:0px;
+}

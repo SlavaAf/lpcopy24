@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+            Lpcopy24
+        {% endblock %}
+        | Каталог лэндингов на продажу
+    </title>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}_s.css">
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/font-awesome.css">
+		<link rel='stylesheet' id='camera-css'  href='{{ STATIC_URL }}css/camera.css' type='text/css' media='all'>
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/slicknav.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.mobile.customized.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/camera.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/myscript.js"></script>
+		<script src="{{ STATIC_URL }}js/sorting.js" type="text/javascript"></script>
+		<script src="{{ STATIC_URL }}js/jquery.isotope.js" type="text/javascript"></script>
+		<script>
+			jQuery(function(){
+					jQuery('#camera_wrap_1').camera({
+					transPeriod: 500,
+					time: 3000,
+					height: '490px',
+					thumbnails: false,
+					pagination: true,
+					playPause: false,
+					loader: false,
+					navigation: false,
+					hover: false
+				});
+			});
+		</script>
+  </head>
+  <body>
+    <!--home start-->
+
+    <div id="home">
+    	<div class="headerLine">
+	<div id="menuF" class="default">
+		<div class="container">
+			<div class="row">
+				<div class="logo col-md-4">
+					<div>
+						<a href="#">
+							<img src="{{ STATIC_URL }}/images/logo.png">
+						</a>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="navmenu"style="text-align: center;">
+						<ul id="menu">
+							<li class="active" ><a href="#home">Начало</a></li>
+
+							<li><a href="#project">Список копий</a></li>
+
+							<li class="last"><a href="#contact">Контакты</a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ************************** Заголовки ********************** -->
+		<div class="container">
+			<div class="row wrap">
+				<div class="col-md-12 gallery">
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- ************************** Цифры ********************** -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 project">
+					<h3 id="counter">0</h3>
+					<h4>Готовых копий*</h4>
+					<p>*Постоянно растущая база готовых копий!</p>
+				</div>
+				<div class="col-md-4 project">
+					<h3 id="counter1">0</h3>
+					<h4>рублей*</h4>
+					<p>*Цена готовых копий для постоянных покупателей!<br>
+					Возможны дополнительные скидки</p>
+				</div>
+				<div class="col-md-4 project">
+					<h3 id="counter2" style="margin-left: 20px;">0</h3>
+					<h4 style="margin-left: 20px;">рублей*</h4>
+					<p>*средняя стоимость новых копий(не из базы готовых)
+					Копирование на заказ от 500 руб.
+					</p>
+				</div>
+			</div>
+		</div>
+
+    </div>
+
+<!-- ************************** Список копий ********************** -->
+
+       <div class="container" id="project">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 cBusiness">
+					<h3>Список готовых копий одностраничный сайтов</h3>
+					<h4>Все копии по <b>450 руб</b>. При покупке от 2 шт единовременно - цена за шт 400 руб.
+					<br><br>Фикс цена копий <b>400 руб</b>. - для постоянных клиентов!
+					</h4>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<!-- filter_block -->
+				<div id="options" class="col-md-12" style="text-align: center;">
+					<ul id="filter" class="option-set" data-option-key="filter">
+						<li><a class="selected" href="#filter" data-option-value="*" class="current">Все копии</a></li>
+						<li><a href="#filter" data-option-value=".watch">Часы</a></li>
+						<li><a href="#filter" data-option-value=".branding">Гаджеты</a></li>
+						<li><a href="#filter" data-option-value=".woomen">Женские</a></li>
+						<li><a href="#filter" data-option-value=".children">Детские</a></li>
+						<li><a href="#filter" data-option-value=".raznoe">Разное</a></li>
+					</ul>
+				</div><!-- //filter_block -->
+
+            {% block content %}
+            {% endblock %}
+        </div>
+  </div>
+<!--contact start-->
+
+    <div id="contact">
+
+
+
+
+		<div class="line7">
+			<div class="container">
+				<div class="row footer">
+					<div class="col-md-12">
+						<h3>Контакты</h3>
+						<p>К оплате принимаю Яндекс Деньги, СберБанк, QIWI, Web Money.</p>
+
+					</div>
+					<div class="soc col-md-12">
+						<ul>
+							<!--<li class="soc6"><a href="#"></a></li>
+							<li class="soc7"><a href="#"></a></li>-->
+							<li><p>Остались вопросы? Пишите в вк: </p></li>
+							<li><a target="_blank"><img src="{{ STATIC_URL }}images/vk-32.png"/></a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="lineBlack">
+			<div class="container">
+				<div class="row downLine">
+
+					<div class="col-md-6 text-left copy">
+						<p>Copyright &copy; 2015 Одностраничные сайты. Все права защищены.</p>
+					</div>
+					<div class="col-md-6 text-right dm">
+						<ul id="downMenu">
+							<li class="active"><a href="#home">Начало</a></li>
+
+							<li><a href="#project">Список копий</a></li>
+
+							<li class="last"><a href="#contact">Контакты</a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+<script src="{{ STATIC_URL }}js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery.slicknav.js"></script>
+	<script>
+			$(document).ready(function(){
+			$(".bhide").click(function(){
+				$(".hideObj").slideDown();
+				$(this).hide(); //.attr()
+				return false;
+			});
+			$(".bhide2").click(function(){
+				$(".container.hideObj2").slideDown();
+				$(this).hide(); // .attr()
+				return false;
+			});
+
+			$('.heart').mouseover(function(){
+					$(this).find('i').removeClass('fa-heart-o').addClass('fa-heart');
+				}).mouseout(function(){
+					$(this).find('i').removeClass('fa-heart').addClass('fa-heart-o');
+				});
+
+				function sdf_FTS(_number,_decimal,_separator)
+				{
+				var decimal=(typeof(_decimal)!='undefined')?_decimal:2;
+				var separator=(typeof(_separator)!='undefined')?_separator:'';
+				var r=parseFloat(_number)
+				var exp10=Math.pow(10,decimal);
+				r=Math.round(r*exp10)/exp10;
+				rr=Number(r).toFixed(decimal).toString().split('.');
+				b=rr[0].replace(/(\d{1,3}(?=(\d{3})+(?:\.\d|\b)))/g,"\$1"+separator);
+				r=(rr[1]?b+'.'+rr[1]:b);
+
+				return r;
+}
+
+			setTimeout(function(){
+					$('#counter').text('0');
+					$('#counter1').text('0');
+					$('#counter2').text('0');
+					setInterval(function(){
+
+						var curval=parseInt($('#counter').text());
+						var curval1=parseInt($('#counter1').text().replace(' ',''));
+						var curval2=parseInt($('#counter2').text());
+						if(curval<=149){
+							$('#counter').text(curval+1);
+						}
+						if(curval1<=399){
+							$('#counter1').text(sdf_FTS((curval1+20),0,' '));
+						}
+						if(curval2<=996){
+							$('#counter2').text(curval2+1);
+						}
+					}, 2);
+
+				}, 500);
+			});
+	</script>
+	<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery('#menu').slicknav();
+
+	});
+	</script>
+
+	<script type="text/javascript">
+    $(document).ready(function(){
+
+        var $menu = $("#menuF");
+
+        $(window).scroll(function(){
+            if ( $(this).scrollTop() > 100 && $menu.hasClass("default") ){
+                $menu.fadeOut('fast',function(){
+                    $(this).removeClass("default")
+                           .addClass("fixed transbg")
+                           .fadeIn('fast');
+                });
+            } else if($(this).scrollTop() <= 100 && $menu.hasClass("fixed")) {
+                $menu.fadeOut('fast',function(){
+                    $(this).removeClass("fixed transbg")
+                           .addClass("default")
+                           .fadeIn('fast');
+                });
+            }
+        });
+	});
+    //jQuery
+	</script>
+	<script>
+		/*menu*/
+		function calculateScroll() {
+			var contentTop      =   [];
+			var contentBottom   =   [];
+			var winTop      =   $(window).scrollTop();
+			var rangeTop    =   200;
+			var rangeBottom =   500;
+			$('.navmenu').find('a').each(function(){
+				contentTop.push( $( $(this).attr('href') ).offset().top );
+				contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
+			})
+			$.each( contentTop, function(i){
+				if ( winTop > contentTop[i] - rangeTop && winTop < contentBottom[i] - rangeBottom ){
+					$('.navmenu li')
+					.removeClass('active')
+					.eq(i).addClass('active');
+				}
+			})
+		};
+
+		$(document).ready(function(){
+			calculateScroll();
+			$(window).scroll(function(event) {
+				calculateScroll();
+			});
+			$('.navmenu ul li a').click(function() {
+				$('html, body').animate({scrollTop: $(this.hash).offset().top - 80}, 800);
+				return false;
+			});
+		});
+	</script>
+	<script type="text/javascript" charset="utf-8">
+
+		jQuery(document).ready(function(){
+			jQuery(".pretty a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'light_square',slideshow:3000, autoplay_slideshow: true, social_tools: ''});
+
+		});
+	</script>
+  </body>
+</html>
+
+
+

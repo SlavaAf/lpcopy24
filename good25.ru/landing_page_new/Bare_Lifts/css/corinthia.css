@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'CorinthiaRegular';
+    src: url('../fonts/corinthia.eot');
+    src: url('../fonts/corinthia.eot') format('embedded-opentype'),
+         url('../fonts/corinthia.woff') format('woff'),
+         url('../fonts/corinthia.ttf') format('truetype'),
+         url('../fonts/corinthia.svg#CorinthiaRegular') format('svg');
+}

@@ -1,0 +1,21 @@
+
+#countdown p {
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 27px;
+}
+
+#countdown ul li b {
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 41px;
+}
+
+#countdown ul li span {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    text-transform: uppercase;
+}

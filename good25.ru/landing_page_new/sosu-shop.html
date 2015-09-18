@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="ru-RU">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="UTF-8">
+    <title>Sosu / Магазин японских носочков</title>
+
+    <link rel="stylesheet" href="1/styles/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="1/styles/tipsy.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="1/styles/style.css" type="text/css" />
+    <link rel="shortcut icon" type="image/x-icon" href="1/styles/favicon.ico">
+    <script type="text/javascript" src="1/scripts/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="1/scripts/jquery.hasEventListener-1.0.5.min.js"></script>
+    <script type="text/javascript" src="1/scripts/jquery.leanModal.js"></script>
+    <script type="text/javascript" src="1/scripts/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="1/scripts/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="1/scripts/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="1/scripts/main.js"></script>
+    <script>
+        $(function(){
+
+            $('.b-form-input_required_phone').mask('+7 (999) 999-99-99');
+
+        });
+    </script>
+</head>
+<body>
+    <div class="l-main">
+        <div class="b-basket">
+            <div class="b-basket-h">
+                <div class="b-basket-h-h">
+                    <div class="b-basket-button"></div>
+
+                    <div class="b-basket-block">
+                        <div class="b-basket-block-h">
+                            <h2 class="b-ordercall-form-header">Ваша корзина</span></h2>
+
+                            <p class="b-ordercall-form-message_support">Введите количество пар носочков с разными ароматами и нажмите на "Оставить заявку"</p>
+
+							<form class="ordered-items" action="#">
+								<div class="b-basket-items">
+									<div class="b-basket-items__item b-basket-items__item-1">
+										<div class="b-basket-items__item-buttons">
+											<div class="b-basket-items__item-buttons__item b-basket-items__item-buttons__item-top"></div>
+											<div class="b-basket-items__item-buttons__item b-basket-items__item-buttons__item-bottom"></div>
+										</div>
+										<input type="text" class="b-basket-items__item-num" min="0" max="100" name="basket_1_num" id="basket_1_num" value="0"> <span class="b-basket-items__item-name">Горная лаванда</span></div>
+									<div class="b-basket-items__item b-basket-items__item-2">
+										<div class="b-basket-items__item-buttons">
+											<div class="b-basket-items__item-buttons__item b-basket-items__item-buttons__item-top"></div>
+											<div class="b-basket-items__item-buttons__item b-basket-items__item-buttons__item-bottom"></div>
+										</div>
+										<input type="text" class="b-basket-items__item-num" min="0" max="100" name="basket_2_num" id="basket_2_num" value="0"> <span class="b-basket-items__item-name">Нежная роза</span></div>
+									<div class="b-basket-items__item b-basket-items__item-3">
+										<div class="b-basket-items__item-buttons">
+											<div class="b-basket-items__item-buttons__item b-basket-items__item-buttons__item-top"></div>
+											<div class="b-basket-items__item-buttons__item b-basket-items__item-buttons__item-bottom"></div>
+										</div>
+										<input type="text" class="b-basket-items__item-num" min="0" max="100" name="basket_3_num" id="basket_3_num" value="0"> <span class="b-basket-items__item-name">Дикая мята</span></div>
+								</div>
+							</form>
+
+                            <div class="b-basket-order-button b-button-1 b-button-1_2"><a href="#order-form" class="i-order_call" title="Заказ носочков" data-info="" rel="Оформление заказа"></a></div>
+
+                            <div class="b-form-license" style="margin-top: 10px;">
+Внимание! При заказе от 4 единиц товара,<br />
+доставка по России бесплатна!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="i-clear"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-block_header-panel">
+
+            <div class="b-flower-1"></div>
+            <div class="b-flower-2"></div>
+
+            <div class="b-block_header-panel-h">
+                <div class="b-block_header-logo"></div>
+
+                
+<div class="b-block_header-contacts">
+                    <div class="b-block_header-contacts-phone"><a href="tel:88000000000"><span>8 800</span> 000-00-00</a></div>
+                    <div class="b-block_header-contacts-time">Звонок бесплатный по России</div>
+                </div>
+
+
+                
+            </div>
+        </div>
+        <div class="b-block b-block_header">
+            <div class="b-block_header-h">
+
+                <div class="b-block_header-benefits">
+                    <div class="b-block_header-benefits-h"></div>
+                </div>
+
+                <div class="b-block-h">
+                  <div id="timer" class="timer1"><div id="clock"></div></div>
+                    <div class="b-block_header-form">
+                        <div class="b-block_header-form-h b-cool_form">
+
+                            <div class="b-block_header-form-header">
+                                <div class="b-block_header-form-header-main">Оставьте заявку</div>
+                                <div class="b-block_header-form-header-sub">и получите <span>скидку 30%!</span></div>
+                            </div>
+
+                            <div class="b-cool_form-h">
+                                <div class="b-form-h i-form-parent">
+                                    <form action="#" method="post" class="order-form i-order-form">
+										<input type="hidden" name="action" value="order">
+                                        <label for="email" class="b-form-label">Ваше имя:</label>
+                                        <div class="b-form-input b-form-input_email">
+                                            <input class="fio-input-form b-form-input-field b-form-input_required b-form-input_required_email formtip_h" type="text" name="name" id="fio" placeholder="Введите Ваше имя:" />
+                                        </div>
+                                        <label for="phone" class="b-form-label">Ваш телефон:</label>
+                                        <div class="b-form-input b-form-input_phone i-noselect">
+                                            <input class="phone-input-form i-noselect b-form-input-field b-form-input_required b-form-input_required_phone formtip_h" type="text" name="phone" id="phone" placeholder="Введите Ваш телефон:" />
+                                        </div>
+                                        <label for="aroma" class="b-form-label">Выберите аромат:</label>
+                                        <div class="b-form-input b-form-input_aroma i-noselect">
+                                            <div class="b-form-input_aroma-num">
+                                                <div class="b-form-input_aroma-num-h">
+                                                    <input style="display: none;" type="text" class="b-form-input_aroma-num-input formtip_hh product_num_field" name="product_num_field" id="product_num_field" value="1" min="1" max="99" title="Введите, сколько пар Вам нужно?" />
+                                                </div>
+                                            </div>
+                                            <input class="i-noselect b-form-input-field b-form-input_required b-form-input_required_aroma formtip_h info" type="text" name="info" id="info" placeholder="Роза, Мята или Лаванда" />
+
+                                            <a href="#select-aroma" class="i-order_basket"></a>
+                                        </div>
+                                        <div class="b-form-block-body-line">
+                                            <div class="b-button i-order b-form-button b-button-1">
+                                                <input type="submit" name="order" value="оставить заявку" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                    
+                                    <div id='confirmation'></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="b-block b-block_what">
+            <div class="b-block_what-h">
+                <div class="b-block_what-hh">
+                    <div class="b-block-h">
+                        <div class="b-block_what-list">
+                            <div class="b-block_what-list__item">
+Носочки SOSU <span>заслужили славу<br />
+в Японии</span> и добрались до нас. 
+                            </div>
+                            <div class="b-block_what-list__item">
+Они представляют собой прозрачные<br />
+целлофановые <span>носки с жидкостью внутри</span>.
+                            </div>
+                            <div class="b-block_what-list__item">
+Эта жидкость - слабая <span>молочная кислота с<br />
+экстрактом</span> лопуха, лимона, шалфея и плюща.  
+                            </div>
+                            <div class="b-block_what-list__item">
+Она приводит к <span>естественному отшелушиванию</span><br />
+грубой ткани, под которой находится нежная и<br />
+молодая кожа.
+                            </div>
+                            <div class="b-block_what-list__item">
+Носочки подойдут абсолютно всем:<br />
+<span>у них универсальный размер</span>, для их<br />
+использования ничего не нужно.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="b-block b-block_how">
+            <div class="b-block_how-h">
+                <div class="b-block-h">
+                </div>
+            </div>
+        </div>
+        <div class="b-block b-block_want">
+
+            <div class="b-flower-3"></div>
+            <div class="b-flower-4"></div>
+
+            <div class="b-block_want-h">
+                <div class="b-block_want-hh">
+                    <div class="b-block_want-hhh">
+                        <div class="b-block_want-hhhh">
+                            <div class="b-block-h">
+                                <div class="b-block_want-selections">
+                                    <div class="b-block_want-selections__item b-block_want-selections__item-1">
+                                        <div class="b-block_want-selections__item-h">
+                                            <div class="b-block_want-selections__item-name">
+                                                <div class="b-block_want-selections__item-name-h">
+                                                    Горная лаванда
+
+                                                    <div class="b-block_want-selections__item-name-data">
+                                                        <div class="b-block_want-selections__item-name-data-name">Горная лаванда</div><!--
+                                                        --><div class="b-block_want-selections__item-name-data-num">
+                                                            <input type="text" class="b-block_want-selections__item-name-data-num-input" id="want_want_1_num" name="want_want_1_num" data-button="iwant1" data-aroma="Горная лаванда" value="1" />
+                                                        </div><!--
+                                                        --><div class="b-block_want-selections__item-name-data-other">шт.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="b-block_want-selections__item b-block_want-selections__item-2">
+                                        <div class="b-block_want-selections__item-h">
+                                            <div class="b-block_want-selections__item-name">
+                                                <div class="b-block_want-selections__item-name-h">
+                                                    Нежная роза
+
+                                                    <div class="b-block_want-selections__item-name-data">
+                                                        <div class="b-block_want-selections__item-name-data-name">Нежная роза</div><!--
+                                                        --><div class="b-block_want-selections__item-name-data-num">
+                                                            <input type="text" class="b-block_want-selections__item-name-data-num-input" id="want_want_2_num" name="want_want_2_num" data-button="iwant1" data-aroma="Нежная роза" value="1" />
+                                                        </div><!--
+                                                        --><div class="b-block_want-selections__item-name-data-other">шт.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="b-block_want-selections__item b-block_want-selections__item-3">
+                                        <div class="b-block_want-selections__item-h">
+                                            <div class="b-block_want-selections__item-name">
+                                                <div class="b-block_want-selections__item-name-h">
+                                                    Дикая мята
+
+                                                    <div class="b-block_want-selections__item-name-data">
+                                                        <div class="b-block_want-selections__item-name-data-name">Дикая мята</div><!--
+                                                        --><div class="b-block_want-selections__item-name-data-num">
+                                                            <input type="text" class="b-block_want-selections__item-name-data-num-input" id="want_want_3_num" name="want_want_3_num" data-button="iwant1" data-aroma="Дикая мята" value="1" />
+                                                        </div><!--
+                                                        --><div class="b-block_want-selections__item-name-data-other">шт.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="b-block_want-button b-button-1 b-button-1_2"><a href="#order-form" class="i-order_basket" title="Заказ носочков" data-info=""></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="b-block b-block_work">
+            <div class="b-block-h">
+            </div>
+        </div>
+        <div class="b-block b-block_benefits">
+            <div class="b-block-h">
+            </div>
+        </div>
+        <div class="b-block b-block_reviews">
+            <div class="b-block-h">
+                <div class="b-block_reviews-header"></div>
+
+                <div class="b-block_reviews-video__item b-block_reviews-video__item-1">
+                    <iframe width="392" height="239" src="http://www.youtube.com/embed/Nhy55NYQoVI" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="b-block_reviews-video__item b-block_reviews-video__item-2">
+                    <iframe width="392" height="239" src="http://www.youtube.com/embed/cejsk6r91yA" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="b-block_reviews__item b-block_reviews__item-1">
+Девочки, носочки творят чудеса!<br />
+Через 5 дней пяточки перестали<br />
+напоминать бабушкины))) Теперь<br />
+розовые и аккуратные! Лучше, чем<br />
+пилинг со скребками, никакого<br />
+воспаления!!! и не трескаются как<br />
+от пемзы) Всем советую.
+                </div>
+                <div class="b-block_reviews__item b-block_reviews__item-2">
+Сначала боялась и переживала.<br />
+Потом почитала состав и просто<br />
+обрадовалась. Столько полезных<br />
+экстрактов не во всех кремах<br />
+есть) попробовала, это не больно,<br />
+только стопы чешутся немного.<br />
+Через пару дней кожа начала<br />
+слезать. Слезла - а снизу молодая<br />
+и нежная кожа. Спасибо, я так рада!!!
+                </div>
+                <div class="b-block_reviews__item b-block_reviews__item-3">
+Спасибо, порадовали! Сначала<br />
+переживала, брать ли. Но пилинг<br />
+дороже, поэтому рискнула и взяла<br />
+сразу 3 пачки. Курьер доставил<br />
+быстро, оплатила ему и стала<br />
+пробовать. Все просто, по<br />
+инструкции. Утром просыпаюсь -<br />
+МАМОЧКИ - все стопы облезают.<br />
+Так страшно было, я думала такой<br />
+и останусь. А потом все слезло и<br />
+ноги стали как после всех пилингов<br />
+и спа. И гораздо дешевле. Спасибо,<br />
+ребят! Буду периодически заказывать!
+                </div>
+            </div>
+        </div>
+        <div class="b-block b-block_cover">
+            <div class="b-block-h">
+                <div class="b-block_header-form">
+                    <div class="b-block_header-form-h b-cool_form">
+
+                        <div class="b-block_header-form-header">
+                            <div class="b-block_header-form-header-main">Оставьте заявку</div>
+                            <div class="b-block_header-form-header-sub">и получите <span>скидку 30%!</span></div>
+                        </div>
+
+                        <div class="b-cool_form-h">
+                            <div class="b-form-h i-form-parent">
+                                <form action="#" method="post" class="order-form i-order-form">
+									<input type="hidden" name="action" value="order">
+                                    <label for="email" class="b-form-label">Ваше имя:</label>
+                                    <div class="b-form-input b-form-input_email">
+                                        <input class="fio-input-form b-form-input-field b-form-input_required b-form-input_required_email formtip_h" type="text" name="name" id="fio" placeholder="Введите Ваше имя:" />
+                                    </div>
+                                    <label for="phone" class="b-form-label">Ваш телефон:</label>
+                                    <div class="b-form-input b-form-input_phone i-noselect">
+                                        <input class="phone-input-form  i-noselect b-form-input-field b-form-input_required b-form-input_required_phone formtip_h" type="text" name="phone" id="phone" placeholder="Введите Ваш телефон:" />
+                                    </div>
+                                    <label for="aroma" class="b-form-label">Выберите аромат:</label>
+                                    <div class="b-form-input b-form-input_aroma i-noselect">
+                                        <div class="b-form-input_aroma-num">
+                                            <div class="b-form-input_aroma-num-h">
+                                                <input type="text" class="b-form-input_aroma-num-input formtip_hh product_num_field" name="product_num_field" id="product_num_field" value="1" min="1" max="99" title="Введите, сколько пар Вам нужно?" />
+                                            </div>
+                                        </div>
+                                        <input class="i-noselect b-form-input-field b-form-input_required b-form-input_required_aroma formtip_h info" type="text" name="info" id="info" placeholder="Роза, Мята или Лаванда" />
+                                    
+                                        <a href="#select-aroma" class="i-order_call"></a>
+                                    </div>
+                                    <div class="b-form-block-body-line">
+                                        <div class="b-button i-order b-form-button b-button-1">
+                                            <input type="submit" name="order" value="оставить заявку" />
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div id='confirmation'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="b-block b-block_benefits2">
+            <div class="b-block-h">
+                <div class="b-block_benefits2-header"></div>
+
+                <div class="b-block_benefits2-main"></div>
+
+                <div class="b-block_benefits2__item b-block_benefits2__item-1">
+                    <div class="b-block_benefits2__item-name">Гарантия  возврата</div>
+                    <div class="b-block_benefits2__item-text">
+Вам не понравилась<br />
+продукция? Мы вернем<br />
+Вам все уплаченные<br />
+деньги!
+                    </div>
+                </div>
+                <div class="b-block_benefits2__item b-block_benefits2__item-2">
+                    <div class="b-block_benefits2__item-name">Любые способы оплаты</div>
+                    <div class="b-block_benefits2__item-text">
+Выбирайте удобный способ:<br />
+наличными курьеру, банк. картой<br />
+на сайте, наш счет через<br />
+онлайн-банкинг, на почте при<br />
+получении.<br /><span class="b-block_benefits2__item-text-lined"><a href="#order-form" class="i-order_call" rel="Консультация по[br]способам оплаты">Консультация по способам оплаты</a>.</span>
+                    </div>
+                </div>
+                <div class="b-block_benefits2__item b-block_benefits2__item-3">
+                    <div class="b-block_benefits2__item-name">Доступная цена</div>
+                    <div class="b-block_benefits2__item-text">
+Мы установили самые<br />
+низкие цены на носочки<br />
+SOSU. Продаем их<br />
+<span class="b-block_benefits2__item-text-bold">по цене, доступной<br />любому</span>.
+                    </div>
+                </div>
+                <div class="b-block_benefits2__item b-block_benefits2__item-4">
+                    <div class="b-block_benefits2__item-name">Доставка по всей России</div>
+                    <div class="b-block_benefits2__item-text">
+Мы предоставляем Вам<br />
+выбор: получить от курьера<br />
+лично в руки, забрать на<br />
+пункте самовывоза или<br />
+получить их почтой России.<br />
+<span class="b-block_benefits2__item-text-lined"><a href="#order-form" class="i-order_call" rel="Консультация по[br]пунктам выдачи">Консультация по пунктам выдачи</a>.</span>
+                    </div>
+                </div>
+                <div id="timer" class="timer2"><div id="clock2"></div></div>
+            </div>
+        </div>
+        <div class="b-block b-block_want b-block_want_2">
+          
+            <div class="b-flower-5"></div>
+
+            <div class="b-block_want-h">
+                <div class="b-block_want-hh">
+                    <div class="b-block_want-hhh">
+                        <div class="b-block_want-hhhh">
+                            <div class="b-block-h">
+                                <div class="b-block_want-selections">
+                                    <div class="b-block_want-selections__item b-block_want-selections__item-1">
+                                        <div class="b-block_want-selections__item-h">
+                                            <div class="b-block_want-selections__item-name">
+                                                <div class="b-block_want-selections__item-name-h">
+                                                    Горная лаванда
+
+                                                    <div class="b-block_want-selections__item-name-data">
+                                                        <div class="b-block_want-selections__item-name-data-name">Горная лаванда</div><!--
+                                                        --><div class="b-block_want-selections__item-name-data-num">
+                                                            <input type="text" class="b-block_want-selections__item-name-data-num-input" id="want_want_1_num" name="want_want_1_num" data-button="iwant1" data-aroma="Горная лаванда" value="1" />
+                                                        </div><!--
+                                                        --><div class="b-block_want-selections__item-name-data-other">шт.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="b-block_want-selections__item b-block_want-selections__item-2">
+                                        <div class="b-block_want-selections__item-h">
+                                            <div class="b-block_want-selections__item-name">
+                                                <div class="b-block_want-selections__item-name-h">
+                                                    Нежная роза
+
+                                                    <div class="b-block_want-selections__item-name-data">
+                                                        <div class="b-block_want-selections__item-name-data-name">Нежная роза</div><!--
+                                                        --><div class="b-block_want-selections__item-name-data-num">
+                                                            <input type="text" class="b-block_want-selections__item-name-data-num-input" id="want_want_2_num" name="want_want_2_num" data-button="iwant1" data-aroma="Нежная роза" value="1" />
+                                                        </div><!--
+                                                        --><div class="b-block_want-selections__item-name-data-other">шт.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="b-block_want-selections__item b-block_want-selections__item-3">
+                                        <div class="b-block_want-selections__item-h">
+                                            <div class="b-block_want-selections__item-name">
+                                                <div class="b-block_want-selections__item-name-h">
+                                                    Дикая мята
+
+                                                    <div class="b-block_want-selections__item-name-data">
+                                                        <div class="b-block_want-selections__item-name-data-name">Дикая мята</div><!--
+                                                        --><div class="b-block_want-selections__item-name-data-num">
+                                                            <input type="text" class="b-block_want-selections__item-name-data-num-input" id="want_want_3_num" name="want_want_3_num" data-button="iwant1" data-aroma="Дикая мята" value="1" />
+                                                        </div><!--
+                                                        --><div class="b-block_want-selections__item-name-data-other">шт.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="b-block_want-button b-button-1 b-button-1_3"><a href="#order-form" class="i-order_basket" title="Заказ носочков" data-info=""></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-block b-block_footer">
+            <div class="b-block-h">
+                <div class="b-block_footer-logo"></div>
+                
+          <div class="b-block_footer-contacts">
+            <div class="b-block_footer-contacts-time" style="font-weight: bold; font-size: 14px; margin-top: 13px;">Доставка по всей России</div>
+          </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="select-aroma" class="b-ordercall-form b-ordercall-form_select" style="width: 650px;">
+        <div class="b-ordercall-form-h b-ordercall-form-h_1 i-form-parent">
+            <div class="b-ordercall-form-exit">
+                <a href="javascript:void(0);" class="i-ordercall_exit">Закрыть</a>
+            </div>
+
+            <h2 class="b-ordercall-form-header" style="color: #333; font-family: 'Lato'; margin-bottom: 20px;">Выберите аромат носочков</h2>
+
+            <div class="b-block_want-selections">
+                <div class="b-block_want-selections__item b-block_want-selections__item-1">
+                    <div class="b-block_want-selections__item-h">
+                        <div class="b-block_want-selections__item-name">
+                            <div class="b-block_want-selections__item-name-h">
+                                Горная лаванда
+
+                                <div class="b-block_want-selections__item-name-data">
+                                    <div class="b-block_want-selections__item-name-data-name">Горная лаванда</div><!--
+                                    --><div class="b-block_want-selections__item-name-data-num">
+                                        <input type="text" class="b-block_want-selections__item-name-data-num-input" id="want_want_1_num" name="want_want_1_num" data-button="iwant1" data-aroma="Горная лаванда" value="1" />
+                                    </div><!--
+                                    --><div class="b-block_want-selections__item-name-data-other">шт.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="b-block_want-selections__item b-block_want-selections__item-2">
+                    <div class="b-block_want-selections__item-h">
+                        <div class="b-block_want-selections__item-name">
+                            <div class="b-block_want-selections__item-name-h">
+                                Нежная роза
+
+                                <div class="b-block_want-selections__item-name-data">
+                                    <div class="b-block_want-selections__item-name-data-name">Нежная роза</div><!--
+                                    --><div class="b-block_want-selections__item-name-data-num">
+                                        <input type="text" class="b-block_want-selections__item-name-data-num-input" id="want_want_2_num" name="want_want_2_num" data-button="iwant1" data-aroma="Нежная роза" value="1" />
+                                    </div><!--
+                                    --><div class="b-block_want-selections__item-name-data-other">шт.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="b-block_want-selections__item b-block_want-selections__item-3">
+                    <div class="b-block_want-selections__item-h">
+                        <div class="b-block_want-selections__item-name">
+                            <div class="b-block_want-selections__item-name-h">
+                                Дикая мята
+
+                                <div class="b-block_want-selections__item-name-data">
+                                    <div class="b-block_want-selections__item-name-data-name">Дикая мята</div><!--
+                                    --><div class="b-block_want-selections__item-name-data-num">
+                                        <input type="text" class="b-block_want-selections__item-name-data-num-input" id="want_want_3_num" name="want_want_3_num" data-button="iwant1" data-aroma="Дикая мята" value="1" />
+                                    </div><!--
+                                    --><div class="b-block_want-selections__item-name-data-other">шт.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="b-button b-button-order_big b-button-1 b-button-1_4" style="margin: 0 auto; margin-top: 60px;">
+            </div>
+        </div>
+    </div>
+
+    <div id="order-form" class="b-ordercall-form">
+        <div class="b-ordercall-form-h b-ordercall-form-h_1 i-form-parent">
+            <div class="b-ordercall-form-exit">
+                <a href="javascript:void(0);" class="i-ordercall_exit">Закрыть</a>
+            </div>
+
+            <h2 class="b-ordercall-form-header"><span class="tv_set_name"></span></h2>
+
+            <p class="b-ordercall-form-message_support">Оставьте Ваш телефон и мы<br />перезвоним в течении 5 минут.</p>
+
+            <form class="order-form i-order-form" action="#">
+				<input type="hidden" name="action" value="order">
+                <div class="b-form-input b-form-input_person">
+                    <input class="fio-input-form b-form-input-field b-form-input_required formtip_h" type="text" name="name" value="" id="fio" placeholder="Введите Ваше имя:" />
+                    <label class="error" for="fio" id="name_error"></label>
+                </div>
+                <div class="b-form-input b-form-input_phone">
+                    <input class="phone-input-form i-noselect b-form-input-field b-form-input_required b-form-input_required_phone formtip_h" type="text" name="phone" value="" id="phone" placeholder="Введите Ваш телефон:" />
+                    <label class="error" for="phone" id="phone_error"></label>
+                </div>
+                <fieldset class="b-form-block-body-line b-form-block-body-line_submit">
+                    <div class="b-button b-button-order_big b-button-1" style="margin: 0 auto;">
+                        <input type="submit" name="order" value="Отправить заявку" />
+                    </div>
+                </fieldset>
+
+                <input type="hidden" name="want_like" class="tv_set_name_field" value="">
+                <input type="hidden" name="info" class="info" value="">
+                <input type="hidden" name="product_num_field" class="product_num_field" value="">
+
+                <div class="b-form-license" style="margin-top: 10px;">
+Ваши данные в безопасности и не<br />
+будут передаваться третьим лицам<br />
+                </div>
+            </form>
+
+            <div id='confirmation'></div>
+        </div>
+    </div>
+
+    <div id="ordercall-form" class="b-ordercall-form">
+        <div class="b-ordercall-form-h b-ordercall-form-h_1 i-form-parent">
+            <div class="b-ordercall-form-exit">
+                <a href="javascript:void(0);" class="i-ordercall_exit">Закрыть</a>
+            </div>
+
+            <h2 class="b-ordercall-form-header">Заявка на <span class="b-ordercall-form-header-main">обратный звонок</span></h2>
+
+            <p class="b-ordercall-form-message_support">Оставьте Ваш телефон и мы<br />перезвоним в течении 5 минут.</p>
+
+            <form class="callback-form i-ordercall-form" action="#">
+				<input type="hidden" name="action" value="callback">
+                <div class="b-form-input b-form-input_person">
+                    <input class="fio-input-form b-form-input-field b-form-input_required formtip_h" type="text" name="name" value="" id="name" placeholder="Введите Ваше имя:" />
+                    <label class="error" for="name" id="name_error"></label>
+                </div>
+                <div class="b-form-input b-form-input_phone i-noselect">
+                    <input class="phone-input-form i-noselect b-form-input-field b-form-input_required b-form-input_required_phone formtip_h" type="text" name="phone" value="" id="phone" placeholder="Введите Ваш телефон:" />
+                    <label class="error" for="phone" id="phone_error"></label>
+                </div>
+                <fieldset class="b-form-block-body-line b-form-block-body-line_submit">
+                    <div class="b-button b-button-order_big b-button-1" style="margin: 0 auto;">
+                        <input type="submit" name="order" value="Отправить заявку" />
+                    </div>
+                </fieldset>
+
+                <div class="b-form-license">
+Ваши данные в безопасности и не будут<br />
+передаваться третьим лицам
+                </div>
+            </form>
+
+            <div id='confirmation'></div>
+        </div>
+    </div>
+
+    <a href="#error-form" class="i-order_call i-order_call-h2">&nbsp;</a>
+    <div id="error-form" class="b-ordercall-form">
+        <div class="b-ordercall-form-h b-ordercall-form-h_1 i-form-parent">
+            <div class="b-ordercall-form-exit">
+                <a href="javascript:void(0);" class="i-ordercall_exit">Закрыть</a>
+            </div>
+
+            <h2 class="b-ordercall-form-header">Произошла ошибка</h2>
+
+            <p class="b-ordercall-form-message_support">
+                Произошла ошибка, попробуйте заполнить<br />
+                и отправить форму снова
+            </p>
+        </div>
+    </div>
+
+    <a href="#done-form" class="i-order_call i-order_call-h">&nbsp;</a>
+    <div id="done-form" class="b-ordercall-form">
+        <div class="b-ordercall-form-h b-ordercall-form-h_1 i-form-parent">
+            <div class="b-ordercall-form-exit">
+                <a href="javascript:void(0);" class="i-ordercall_exit">Закрыть</a>
+            </div>
+
+            <h2 class="b-ordercall-form-header">Спасибо за заявку</h2>
+
+            <p class="b-ordercall-form-message_support">
+                В скором времени наши<br />
+                менеджеры свяжутся с вами!
+            </p>
+        </div>
+    </div>
+
+
+
+<div class="i-preload-1"></div>
+    
+
+</body>
+</html>

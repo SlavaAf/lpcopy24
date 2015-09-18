@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'flow';
+    src: url('fonts/flow/flow.eot');
+    src: url('fonts/flow/flow.eot') format('embedded-opentype'),
+         url('fonts/flow/flow.woff') format('woff'),
+         url('fonts/flow/flow.ttf') format('truetype'),
+         url('fonts/flow/flow.svg#flow') format('svg');
+}
+
+img{border:none;}
+html{min-width:980px;background-color: #fff;}
+body{margin:0;font-size:16px;color:#040404;min-width:980px;position:relative;font-family: 'Trebuchet MS', 'Arial';}
+a{text-decoration:underline;color:#361b0c;}
+a:hover{text-decoration:none;cursor:pointer}
+.clear{position:relative;float:left;width:100%;}
+.ppppp {font-family: 'flow';font-size: 30px;color: #1F5D74;line-height: 30px;margin-top: 0;margin-bottom: 0;}
+.st-cd {padding-left: 60px;}
+.st-cd p {float: left;width: 90px;font-family: 'flow';color: #1F5D74;font-weight: bold;}
+.w100 {width:100%;position:relative;float:left;}
+.w980  {width:980px;margin:0 auto;}
+.w100.top {background:#fdd13c;border-bottom:4px solid #ea9f1f;height:37px;line-height: 40px;color: #fff;}
+.w100.top .buts {float: left;width: 685px;}
+.w100.top .buts  a {font-weight: bold;background: #01abce;padding: 4px 17px;margin-left: 20px;text-decoration: none;color: #fff;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+.w100.top span {font-weight: bold;}
+#logotip {display: block;width: 173px;height: 109px;position: absolute;z-index: 9;top: -38px;}
+.shopname {float: left;width: 770px;height: 73px;}
+.zvonok {float: right;width: 200px;height: 73px;line-height: 73px;}
+.shopname h1 {font-size: 27px;padding: 8px 0 0 160px;font-weight: bold;color: #FED927;text-shadow: 0px -1px 0px #0437C1;}
+.shopname h1  span{font-weight: bold;color: #fff;}
+.w100.shapka {background: url(img/fon-top.jpg) repeat-x top center;height: 468px;}
+
+.block-nabor {float: left;width: 100%;height: 350px;background: url(img/fon-block-nabor.jpg) repeat 0 0;-webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;box-shadow: 0px 1px 0px #037dc5;position:relative;}
+.block-nabor-in {padding: 17px 17px 0px 40px;}
+img.nabor-img {border: 1px solid #fdd13c;float: left;}
+img.birka {position: absolute;top: 180px;left: 385px;}
+img.vetka {position: absolute;top: 118px;left: -30px;}
+.nabor-info {float: right;width: 446px;height: 320px;background: url(img/uspey.png) no-repeat 0px 7px;}
+#countdown {margin-top: 25px;background: url(img/timer.png) no-repeat 36px 0;width: 306px;}
+.actiaa {margin-top: 30px;padding-left: 58px;font-size: 18px;font-family: 'flow';color: #518f14;}
+.qwert {position: absolute;top: 180px;left: 385px;width: 166px;height: 166px;background: url(img/birka.png) no-repeat 0 0;}
+.spsp {display: block;text-align: center;margin-top: 65px;color: #FFE000;font-size: 29px;font-weight: bold;-webkit-transform: rotate(20deg);
+-moz-transform: rotate(20deg);-ms-transform: rotate(20deg);-o-transform: rotate(20deg);transform: rotate(20deg);text-shadow: 1px 1px 1px #635A5A;}
+.zvonok a {background: #82c343;padding: 10px 35px;-webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;box-shadow: 0 5px 0 #518f14;color: #fff;text-decoration: none;font-size: 16px;font-weight: bold;text-shadow: 0px 1px 0px #518f14;}
+a.button-nabor {background: #82c343;margin-left: 49px;
+padding: 22px 18px;-webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;box-shadow: 0 5px 0 #518f14;color: #fff;text-decoration: none;font-size: 28px;
+font-weight: bold;text-shadow: 0px 1px 0px #518f14;}
+.zvonok a:hover, a.callme_viewform:hover {background: #82DC2B; }
+img.poli-you {float: left;margin-right: 65px;}
+h2 {font-size: 32px;color: #1f5d74;margin: 35px 0px;}
+.youdian {margin-bottom: 20px;}
+.premium {float: left;width: 600px;}
+.premium li {height: 40px;line-height: 40px;font-size: 20px;list-style-image: url(img/plus.jpg);list-style-position: outside;font-family: 'flow';}
+.katalog {background: #FFFCCB url(img/orange-zub2.jpg) repeat-x 0 0;}
+.katalog  h2{text-transform: uppercase;text-align: center;margin-top: 49px;color: #fff;font-size: 38px;}
+.shiping {background:#fff;border: 1px solid #ccc;-webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;padding: 20px;margin-bottom: 10px;position: relative;height: 278px;}
+.info h3 {font-size: 32px;color: #1f5d74;font-weight: normal;}
+.info p {font-size: 14px;}
+.oldprice, .newprice {float:left;}
+.oldprice {border-right:1px solid #ccc;padding-right: 15px;margin-right: 15px;}
+.info .oldprice p, .info .newprice p {font-size: 20px;color: #1f5d74;margin-top: 10px;line-height: 30px;margin-bottom: 10px;}
+.info .oldprice p span{font-size: 26px;text-decoration:line-through;color:red;}
+.info .newprice p span {font-size: 26px;color:#249d2c;}
+.boxx {background: #fbd23c;padding: 20px;margin: 35px 0;-webkit-border-radius: 10px;position: relative;-moz-border-radius: 10px;border-radius: 10px;height: 267px;}
+.vetka2 {position: absolute;top: -38px;right: -3px;z-index: 10;}
+.multfilm {background: #F8F5C8 url(img/bezh-sin-zub.jpg) repeat-x 0 0;height: 570px;color:#d2870f;}
+.multfilm  h2 {color:#d2870f;margin-bottom: 0;font-size: 38px;}
+.w100.info {background: url(img/bezh-bel-zub.jpg) repeat-x 0 0;}
+.w100.info h2{font-family: 'flow';text-align: center;font-size: 40px;letter-spacing: 1px;margin-bottom: 0;padding-bottom: 0;margin-top: 70px;}
+.w100.info p {font-size:16px;}
+.osobo {background: #fff5c4;margin-top: 25px;border-top: 1px solid #F0D5A6;border-bottom: 1px solid #F0D5A6;}
+.osobo ul li {list-style-image: url(img/ok.png);font-size: 18px;color: #575757;margin-bottom: 13px;}
+.osobo ul {margin-bottom: 40px;}
+.botom {height: 200px;text-align: center;}
+.botom .w980 {padding-top: 86px;}
+.futer {background: #00aeeb url(img/bely-sin-zub.jpg) repeat-x 0 0;margin-top: 30px;height: 140px;}
+.futer  .w980{height: 120px;background: url(img/tel.jpg) no-repeat 0 44px;}
+.podval {color: #fff;font-size: 35px;padding: 50px 50px 0 50px; }
+.podval a {float: right;
+background: #82c343;
+padding: 10px 35px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+box-shadow: 0 5px 0 #518f14;
+color: #fff;
+text-decoration: none;
+font-size: 20px;
+font-weight: bold;
+text-shadow: 0px 1px 0px #518f14;}
+
+.fin {color: red;font-size: 16px;font-weight: normal;}
+
+.shapka .b1c{margin-left: 57px;background: #82c343;padding: 12px 26px;-webkit-border-radius: 10px;-moz-border-radius: 10px;
+border-radius: 10px;
+box-shadow: 0 5px 0 #518f14;
+color: #fff;
+text-decoration: none;
+font-size: 24px;
+font-weight: bold;
+  text-shadow: 0px 1px 0px #518f14;}
+.katalog .b1c, .huodong .b1c, .botom .b1c {background: #82c343;padding: 8px 6px;-webkit-border-radius: 10px;-moz-border-radius: 10px;
+border-radius: 10px;
+box-shadow: 0 5px 0 #518f14;
+color: #fff;
+text-decoration: none;
+font-size: 24px;
+font-weight: bold;
+  text-shadow: 0px 1px 0px #518f14;} 
+  .huodong .b1c {padding: 8px 35px;}
+#products .pagination li.current a {height:46px;}
+ol.tutor {font-size: 26px;font-family: 'flow';margin-left: 42px;}

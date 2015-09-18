@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'IntroRegularRegular';
+    src: url('../fonts/intro-regular.eot');
+    src: url('../fonts/intro-regular.eot') format('embedded-opentype'),
+         url('../fonts/intro-regular.woff') format('woff'),
+         url('../fonts/intro-regular.ttf') format('truetype'),
+         url('../fonts/intro-regular.svg#IntroRegularRegular') format('svg');
+}
