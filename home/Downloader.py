@@ -14,7 +14,7 @@ class SiteParser:
     def save_site(self, url):
         # subprocess.call([self.command + url + self.arch_folder], shell=True)
         os.system(self.command + url + self.arch_folder)
-        # test
+        # test2
         os.system("")
         dirs = os.listdir("static/sites")
 
