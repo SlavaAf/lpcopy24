@@ -13,6 +13,7 @@ def index_view(request):
         url = request.POST.get('url')
         parser.save_site(url)
 
+        #
         return redirect('/')
     else:
         return render(request, 'index.html', {'form': form})
