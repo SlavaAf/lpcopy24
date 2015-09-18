@@ -14,16 +14,15 @@ class SiteParser:
     def save_site(self, url):
         # subprocess.call([self.command + url + self.arch_folder], shell=True)
         os.system(self.command + url + self.arch_folder)
-        # test2
-        os.system("")
-        dirs = os.listdir("static/sites")
-
-        if len(dirs) > 0:
-            tar = tarfile.open("static/tars/" + dirs[0] + ".tar.gz", "w:gz")
-            tar.add("static/sites/" + dirs[0] + "/")
-
-            tar.close()
-            print("end")
+        print(123)
+        # dirs = os.listdir("static/sites")
+        #
+        # if len(dirs) > 0:
+        #     tar = tarfile.open("static/tars/" + dirs[0] + ".tar.gz", "w:gz")
+        #     tar.add("static/sites/" + dirs[0] + "/")
+        #
+        #     tar.close()
+        #     print("end")
 
 
 class DataBaseController:
