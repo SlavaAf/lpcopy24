@@ -9,7 +9,8 @@ class Sites(models.Model):
     name = models.CharField(verbose_name=u'Наименование', max_length=100, unique=True)
     slug = models.SlugField(verbose_name=u'Ссылка', unique=True, default='')
     url = models.CharField(verbose_name=u'Ссылка сайта', unique=True, default='', max_length=100)
-    pass_dir = models.CharField(verbose_name=u'Путь в корне', unique=True, default='', max_length=100)
+    pass_dir = models.CharField(verbose_name=u'Путь в корне', unique=True, default='', max_length=250)
+    pass_index = models.CharField(verbose_name=u'Путь до index.html', unique=True, default='', max_length=250)
 
     class Meta:
         verbose_name = 'сайт'
