@@ -9,10 +9,10 @@ class Sites(models.Model):
     name = models.CharField(verbose_name=u'Наименование', max_length=100)
     slug = models.SlugField(verbose_name=u'Ссылка', default='')
     url = models.CharField(verbose_name=u'Ссылка сайта', default='', max_length=100)
-    pass_dir = models.CharField(verbose_name=u'Путь в корне', default='', max_length=250)
-    pass_index = models.CharField(verbose_name=u'Путь до index.html', default='', max_length=250)
-    pass_img = models.CharField(verbose_name=u'Путь до картинки', default='', max_length=250)
-    pass_tar = models.CharField(verbose_name=u'Путь до архива', default='', max_length=250)
+    path_dir = models.CharField(verbose_name=u'Путь в корне', default='', max_length=250)
+    path_index = models.CharField(verbose_name=u'Путь до index.html', default='', max_length=250)
+    path_img = models.CharField(verbose_name=u'Путь до картинки', default='', max_length=250)
+    path_tar = models.CharField(verbose_name=u'Путь до архива', default='', max_length=250)
 
     class Meta:
         verbose_name = 'сайт'

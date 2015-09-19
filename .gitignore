@@ -1,2 +1,4 @@
+/db.sqlite3
 /home/migrations
 *.pyc
+.idea

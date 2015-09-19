@@ -9,7 +9,7 @@ from pytils.translit import slugify
 class SitesAdmin(admin.ModelAdmin):
     search_fields = ['name']
     prepopulated_fields = {"slug": ("name",)}
-    list_display = ('name', 'pass_dir', 'url',)
+    list_display = ('name', 'path_dir', 'url',)
 
 
 class OrderAdmin(admin.ModelAdmin):
