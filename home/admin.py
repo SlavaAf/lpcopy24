@@ -14,8 +14,8 @@ class SitesAdmin(admin.ModelAdmin):
 
 class OrderAdmin(admin.ModelAdmin):
     search_fields = ['mail']
-    list_display = ('date', 'mail', 'code_pay', 'pay_status', )
-    raw_id_fields = ['name']
+    list_display = ('date', 'mail', )
+    raw_id_fields = ['s_name']
 
 
 admin.site.register(Sites, SitesAdmin)

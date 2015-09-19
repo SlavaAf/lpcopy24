@@ -6,13 +6,13 @@ from datetime import datetime
 
 
 class Sites(models.Model):
-    name = models.CharField(verbose_name=u'Наименование', max_length=100, unique=True)
-    slug = models.SlugField(verbose_name=u'Ссылка', unique=True, default='')
-    url = models.CharField(verbose_name=u'Ссылка сайта', unique=True, default='', max_length=100)
-    pass_dir = models.CharField(verbose_name=u'Путь в корне', unique=True, default='', max_length=250)
-    pass_index = models.CharField(verbose_name=u'Путь до index.html', unique=True, default='', max_length=250)
-    pass_img = models.CharField(verbose_name=u'Путь до картинки', unique=True, default='', max_length=250)
-    pass_tar = models.CharField(verbose_name=u'Путь до архива', unique=True, default='', max_length=250)
+    name = models.CharField(verbose_name=u'Наименование', max_length=100)
+    slug = models.SlugField(verbose_name=u'Ссылка', default='')
+    url = models.CharField(verbose_name=u'Ссылка сайта', default='', max_length=100)
+    pass_dir = models.CharField(verbose_name=u'Путь в корне', default='', max_length=250)
+    pass_index = models.CharField(verbose_name=u'Путь до index.html', default='', max_length=250)
+    pass_img = models.CharField(verbose_name=u'Путь до картинки', default='', max_length=250)
+    pass_tar = models.CharField(verbose_name=u'Путь до архива', default='', max_length=250)
 
     class Meta:
         verbose_name = 'сайт'
@@ -20,11 +20,10 @@ class Sites(models.Model):
 
 
 class Order(models.Model):
+    s_name = models.ForeignKey(Sites, verbose_name=u'Название сайта', blank=True, null=True,)
+    name = models.CharField(verbose_name=u'Заказчик', max_length=100)
     mail = models.EmailField(verbose_name=u'E-mail')
     date = models.DateTimeField(verbose_name='Дата покупки', default=datetime.now())
-    name = models.ForeignKey('home.Sites', related_name='sites_ord', verbose_name=u'Название сайта', blank=True, null=True, default=None )
-    code_pay = models.CharField(verbose_name=u'Номер оплаты', unique=True, max_length=160)
-    pay_status = models.BooleanField(verbose_name=u'Статус оплаты', default=False)
 
     class Meta:
         verbose_name = 'заказ'
