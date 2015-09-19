@@ -10,7 +10,7 @@ class SiteParser:
     arch_folder = " --directory-prefix=static/sites"
     # command = 'wget.sh '
     # command = '"C:/Program Files (x86)/GnuWin32/bin/wget.exe" -r -l2 -k -p -E -nc '
-    command = '/usr/bin/wget -r -l10 -k -p -E -nc '
+    command = '/usr/bin/wget -r -l2 -k -p -E -nc '
 
     def __init__(self):
         pass
@@ -23,7 +23,7 @@ class SiteParser:
         print(url)
         os.mkdir("static/sites/" + folder)
         subprocess.call(self.command + url + self.arch_folder + '/' + folder, shell=True)
-
+        print("Загрузка завершена")
         dirs = os.listdir("static/sites/" + folder)
 
         # Create tarfile
@@ -33,7 +33,7 @@ class SiteParser:
             tar.add("static/sites/" + folder + '/' + dirs[0] + "/", folder)
 
             tar.close()
-            print("end")
+            print("Архивирование завершено")
 
             # Get path to index.html
             index_files = self.find("index.html", "static\\sites\\" + folder)
@@ -45,6 +45,7 @@ class SiteParser:
                 index_file = "None"
                 # print("index.html not found")
             index_file.replace("\\", "/")
+            print("index.html найден")
 
             # save site image
             p = requests.get("http://mini.s-shot.ru/1024x768/300/png/?" + url)
@@ -52,10 +53,11 @@ class SiteParser:
             out = open(pass_image, "wb")
             out.write(p.content)
             out.close()
-            print("image created")
+            print("Изображение загружено")
 
             result = {"url": url,
                       "name": folder,
+                      "slug": folder.lower(),
                       "path_dir": dirs[0],
                       "path_index": index_file,
                       "path_img": pass_image,
