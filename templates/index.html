@@ -1,7 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'base_index.html' %}
 {% load bootstrap %}
 {% block content %}
-    <form class="form-horizontal" method="post">
+    <form class="form-horizontal" method="post" novalidate>
         <legend>Form Title</legend>
         {% csrf_token %}
         {{ form|bootstrap_horizontal }}

@@ -10,7 +10,7 @@ class SiteParser:
     arch_folder = " --directory-prefix=static/sites"
     # command = 'wget.sh '
     # command = '"C:/Program Files (x86)/GnuWin32/bin/wget.exe" -r -l2 -k -p -E -nc '
-    command = '/usr/bin/wget -r -l10 -k -p -E -nc '
+    command = '/usr/local/bin/wget -r -l10 -k -p -E -nc '
 
     def __init__(self):
         pass

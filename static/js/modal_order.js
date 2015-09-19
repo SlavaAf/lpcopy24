@@ -13,7 +13,6 @@ $(function() {
             // get values from FORM
             var name = $("input#name").val();
             var email = $("input#email").val();
-            var url = $("input#url").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
@@ -22,10 +21,9 @@ $(function() {
             //post_form_json(name, url, email);
             $.ajax({
                 type: 'get',
-                url: '/ajax_post_form/',
+                url: '/ajax_post_modal/',
                 data: {
                     name: name,
-                    url: url,
                     email: email
                 },
                 //cache: false,
