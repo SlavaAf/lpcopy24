@@ -3,12 +3,13 @@ import fnmatch
 import tarfile, os, subprocess
 import random
 import string
+import requests
 
 
 class SiteParser:
     arch_folder = " --directory-prefix=static/sites"
     # command = 'wget.sh '
-    # command = '"C:/Program Files (x86)/GnuWin32/bin/wget.exe" -r -k -p -E -nc '
+    # command = '"C:/Program Files (x86)/GnuWin32/bin/wget.exe" -r -l2 -k -p -E -nc '
     command = '/usr/bin/wget -r -l10 -k -p -E -nc '
 
     def __init__(self):
@@ -39,6 +40,14 @@ class SiteParser:
                 print(index_files[0])
             else:
                 print("index.html not found")
+
+            # http://mini.s-shot.ru/1024x768/300/png/?http://aivavip.ru/
+            #save site image
+            p = requests.get("http://mini.s-shot.ru/1024x768/300/png/?" + url)
+            out = open("static/img/sites/" + folder + ".png", "wb")
+            out.write(p.content)
+            out.close()
+            print("image created")
 
             return "Download site completed"
         else:

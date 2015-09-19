@@ -11,6 +11,8 @@ class Sites(models.Model):
     url = models.CharField(verbose_name=u'Ссылка сайта', unique=True, default='', max_length=100)
     pass_dir = models.CharField(verbose_name=u'Путь в корне', unique=True, default='', max_length=250)
     pass_index = models.CharField(verbose_name=u'Путь до index.html', unique=True, default='', max_length=250)
+    pass_img = models.CharField(verbose_name=u'Путь до картинки', unique=True, default='', max_length=250)
+    pass_tar = models.CharField(verbose_name=u'Путь до архива', unique=True, default='', max_length=250)
 
     class Meta:
         verbose_name = 'сайт'
