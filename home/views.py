@@ -12,18 +12,8 @@ from home.models import *
 
 
 def index_view(request):
-    form = AddPartForm(request.POST or None)
-    if request.method == 'POST' and form.is_valid():
-        parser = SiteParser()
-        url = request.POST.get('url')
-        url = url_validate(url)
-
-        parser.save_site(url)
-        #
-        return redirect('/')
-    else:
-
-        return render(request, 'index.html', {'form': form})
+    object_list = Sites.objects.all()
+    return render(request, 'index.html', {'object_list': object_list})
 
 
 def url_validate(url):

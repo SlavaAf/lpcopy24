@@ -10,6 +10,7 @@ class SiteParser:
     arch_folder = " --directory-prefix=static/sites"
     # command = 'wget.sh '
     # command = '"C:/Program Files (x86)/GnuWin32/bin/wget.exe" -r -l2 -k -p -E -nc '
+    # command = '/usr/local/bin/wget -r -l2 -k -p -E -nc '
     command = '/usr/bin/wget -r -l2 -k -p -E -nc '
 
     def __init__(self):
@@ -48,7 +49,7 @@ class SiteParser:
             print("index.html найден")
 
             # save site image
-            p = requests.get("http://mini.s-shot.ru/1024x768/300/png/?" + url)
+            p = requests.get("http://mini.s-shot.ru/1024x768/360/png/?" + url)
             pass_image = "static/img/sites/" + folder + ".png"
             out = open(pass_image, "wb")
             out.write(p.content)

@@ -1,3 +1,15 @@
-{% extends 'base_index.html' %}
+{% extends 'base.html' %}
 {% block content %}
+    {% for object in object_list %}
+        <div class="col-sm-4 portfolio-item">
+            <a href="#{{ object.path_index }}" class="portfolio-link" data-toggle="modal">
+                <div class="caption">
+                    <div class="caption-content">
+                        <i class="fa fa-search-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img src="{{ object.path_img }}" class="img-responsive" alt="">
+            </a>
+        </div>
+    {% endfor %}
 {% endblock %}
