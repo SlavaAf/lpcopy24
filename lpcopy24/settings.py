@@ -131,6 +131,9 @@ STATICFILES_DIRS = (
 
 EMAIL_HOST = "smtp.mail.ru"
 EMAIL_PORT = 465
-EMAIL_HOST_USER = "abaddondevil@inbox.ru"
-EMAIL_HOST_PASSWORD = "**********"
+EMAIL_HOST_USER = "lpcopy24@mail.ru"
+EMAIL_HOST_PASSWORD = "6CzsA22EWx4k"
 EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = "lpcopy24@mail.ru"
+
+# 6CzsA22EWx4k

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import fnmatch
-import tarfile, os, subprocess
+import tarfile, os, subprocess, zipfile, tempfile
 import random
 import string
 import requests
@@ -9,9 +9,9 @@ import requests
 class SiteParser:
     arch_folder = " --directory-prefix=static/sites"
     # command = 'wget.sh '
-    # command = '"C:/Program Files (x86)/GnuWin32/bin/wget.exe" -r -l2 -k -p -E -nc '
+    command = '"C:/Program Files (x86)/GnuWin32/bin/wget.exe" -r -l2 -k -p -E -nc '
     # command = '/usr/local/bin/wget -r -l2 -k -p -E -nc '
-    command = '/usr/bin/wget -r -l2 -k -p -E -nc '
+    # command = '/usr/bin/wget -r -l2 -k -p -E -nc '
 
     def __init__(self):
         pass
@@ -29,11 +29,19 @@ class SiteParser:
 
         # Create tarfile
         if len(dirs) > 0:
-            pass_tar = "static/tars/" + folder + ".tar.gz"
-            tar = tarfile.open(pass_tar, "w:gz")
-            tar.add("static/sites/" + folder + '/' + dirs[0] + "/", folder)
+            zip_f = zipfile.ZipFile("static/tars/" + folder + ".zip", 'w')
+            for root, dir_files, files in os.walk("static/sites/" + folder):
+                for file in files:
+                    print(os.path.join(root, file))
+                    zip_f.write(os.path.join(root, file))
+            zip_f.close()
+            path_tar = "static/tars/" + folder + ".zip"
 
-            tar.close()
+            # pass_tar = "static/tars/" + folder + ".tar"
+            # tar = tarfile.open(pass_tar, "w:")
+            # tar.add("static/sites/" + folder + '/' + dirs[0] + "/", folder)
+            #
+            # tar.close()
             print("Архивирование завершено")
 
             # Get path to index.html
@@ -50,8 +58,8 @@ class SiteParser:
 
             # save site image
             p = requests.get("http://mini.s-shot.ru/1024x768/360/png/?" + url)
-            pass_image = "static/img/sites/" + folder + ".png"
-            out = open(pass_image, "wb")
+            path_img = "static/img/sites/" + folder + ".png"
+            out = open(path_img, "wb")
             out.write(p.content)
             out.close()
             print("Изображение загружено")
@@ -61,9 +69,9 @@ class SiteParser:
                       "slug": folder.lower(),
                       "path_dir": dirs[0],
                       "path_index": index_file,
-                      "path_img": pass_image,
-                      "path_tar": pass_tar}
-
+                      "path_img": path_img,
+                      "path_tar": path_tar}
+            print(result)
             return result
         else:
             os.rmdir("static/sites/" + folder)
