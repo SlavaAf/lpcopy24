@@ -1,14 +1,22 @@
 # coding: utf-8
+from distutils.sysconfig import expand_makefile_vars
 from django.http import HttpResponse
 import json
 from django.core.urlresolvers import reverse_lazy
+from home.models import *
 
 from django.shortcuts import render, redirect
+from django.core.mail import EmailMessage
 
 from home.forms import *
 from home.Downloader import *
 
-from home.models import *
+import smtplib
+from os.path import basename
+from email.mime.application import MIMEApplication
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.utils import COMMASPACE, formatdate
 
 
 def index_view(request):
@@ -23,6 +31,30 @@ def url_validate(url):
         url = "http://" + url
         return url
     return url
+
+
+def send_mail_user(send_from, receiver, path_tar, subject="landing from lpcopy24.ru"):
+    msg = MIMEMultipart(
+        From=send_from,
+        To=COMMASPACE.join(receiver),
+        Date=formatdate(localtime=True),
+        Subject=subject
+    )
+    msg.attach(MIMEText("Thank you for your purchase"))
+    with open(path_tar, "rb") as fil:
+        msg.attach(MIMEApplication(
+            fil.read(),
+            Content_Disposition='attachment; filename="%s"' % basename(path_tar),
+            Name=basename(path_tar)
+        ))
+    try:
+        email = EmailMessage(subject, "Thank you for your purchase")
+        email.to = [receiver]
+        email.attach(msg)
+        email.send()
+        print("Send successful")
+    except BaseException:
+        print("Send failed")
 
 
 def ajax_post_form(request):
@@ -50,6 +82,9 @@ def ajax_post_form(request):
 
         o = Order(name=user_name, mail=user_mail, s_name=site)
         o.save()
+
+        # send_to_mail_user
+        send_mail_user(user_name, user_mail, site.path_tar)
 
         return HttpResponse(json.dumps({'error_code': 0}), content_type='application/json')
     else:
