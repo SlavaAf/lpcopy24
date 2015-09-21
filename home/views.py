@@ -2,6 +2,7 @@
 from django.http import HttpResponse
 import json
 from django.core.urlresolvers import reverse_lazy
+from django.core.mail import send_mail
 
 from django.shortcuts import render, redirect
 
@@ -27,29 +28,35 @@ def url_validate(url):
 
 def ajax_post_form(request):
     if request.is_ajax():
-        url = url_validate(request.GET.get('url', None))
-        user_name = request.GET.get('name', None)
-        user_mail = request.GET.get('email', None)
+        try:
+            send_mail("testSubject", "message", "abaddondevil@inbox.ru", ["rgorkovenko@gmail.com"])
+            print("send ok")
+        except BaseException:
+            print("not send")
 
-        # create or get site
-        list_sites = Sites.objects.filter(url=url)
-        # print(list_sites)
-        if len(list_sites) == 0:
-            parser = SiteParser()
-            result = parser.save_site(url)
-
-            if result == "Site not found":
-                return HttpResponse(json.dumps({'error_code': 1}), content_type='application/json')
-
-            site = Sites(name=result['name'], slug=result['slug'], url=result['url'], path_dir=result['path_dir'],
-                         path_index=result['path_index'], path_img=result['path_img'],
-                         path_tar=result['path_tar'])
-            site.save()
-        else:
-            site = list_sites[0]
-
-        o = Order(name=user_name, mail=user_mail, s_name=site)
-        o.save()
+        # url = url_validate(request.GET.get('url', None))
+        # user_name = request.GET.get('name', None)
+        # user_mail = request.GET.get('email', None)
+        #
+        # # create or get site
+        # list_sites = Sites.objects.filter(url=url)
+        # # print(list_sites)
+        # if len(list_sites) == 0:
+        #     parser = SiteParser()
+        #     result = parser.save_site(url)
+        #
+        #     if result == "Site not found":
+        #         return HttpResponse(json.dumps({'error_code': 1}), content_type='application/json')
+        #
+        #     site = Sites(name=result['name'], slug=result['slug'], url=result['url'], path_dir=result['path_dir'],
+        #                  path_index=result['path_index'], path_img=result['path_img'],
+        #                  path_tar=result['path_tar'])
+        #     site.save()
+        # else:
+        #     site = list_sites[0]
+        #
+        # o = Order(name=user_name, mail=user_mail, s_name=site)
+        # o.save()
 
         return HttpResponse(json.dumps({'error_code': 0}), content_type='application/json')
     else:

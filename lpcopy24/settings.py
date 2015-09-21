@@ -128,3 +128,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+EMAIL_HOST = "smtp.mail.ru"
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "abaddondevil@inbox.ru"
+EMAIL_HOST_PASSWORD = "**********"
+EMAIL_USE_SSL = True
