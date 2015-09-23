@@ -6,13 +6,13 @@ from datetime import datetime
 
 
 class Sites(models.Model):
-    name = models.CharField(verbose_name=u'Наименование', max_length=100)
-    slug = models.SlugField(verbose_name=u'Ссылка', default='')
+    name = models.CharField(verbose_name=u'Наименование', max_length=100, editable=False)
+    slug = models.SlugField(verbose_name=u'Ссылка', default='', editable=False)
     url = models.CharField(verbose_name=u'Ссылка сайта', default='', max_length=100)
-    path_dir = models.CharField(verbose_name=u'Путь в корне', default='', max_length=250)
-    path_index = models.CharField(verbose_name=u'Путь до index.html', default='', max_length=250)
-    path_img = models.CharField(verbose_name=u'Путь до картинки', default='', max_length=250)
-    path_tar = models.CharField(verbose_name=u'Путь до архива', default='', max_length=250)
+    path_dir = models.CharField(verbose_name=u'Путь в корне', default='', max_length=250, editable=False)
+    path_index = models.CharField(verbose_name=u'Путь до index.html', default='', max_length=250, editable=False)
+    path_img = models.CharField(verbose_name=u'Путь до картинки', default='', max_length=250, editable=False)
+    path_tar = models.CharField(verbose_name=u'Путь до архива', default='', max_length=250, editable=False)
 
     class Meta:
         verbose_name = 'сайт'
