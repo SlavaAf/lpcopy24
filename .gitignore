@@ -3,5 +3,6 @@
 *.pyc
 /static/img/sites
 /static/sites
+/lpcopy24/gunicorn.conf.py
 /static/tars
 .idea
