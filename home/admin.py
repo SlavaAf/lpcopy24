@@ -20,9 +20,9 @@ def url_validate(url):
 
 
 class SitesAdmin(admin.ModelAdmin):
-    search_fields = ['name']
-    prepopulated_fields = {"slug": ("name",)}
-    list_display = ('name', 'path_dir', 'url',)
+    # search_fields = ['name']
+    # prepopulated_fields = {"slug": ("name",)}
+    # list_display = ('name', 'path_dir', 'url',)
 
     def save_model(self, request, obj, form, change):
         db = DataBaseController()
@@ -39,6 +39,8 @@ class SitesAdmin(admin.ModelAdmin):
                 return HttpResponse(json.dumps({'error_code': 1}), content_type='application/json')
 
         obj.url = data['url']
+        obj.slug = data['slug']
+        obj.name = data['name']
         obj.path_dir = data['path_dir']
         obj.path_index = data['path_index']
         obj.path_img = data['path_img']
