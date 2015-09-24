@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <iframe src="{{ STATIC_URL }}sites/{{ object.name }}/{{ object.path_dir }}/index.html" width="100%" height="700px;"></iframe>
+            <iframe src="{{ STATIC_URL }}sites/{{ object.name }}/{{ object.path_dir }}/index.html" width="100%" height="700px;" id="{{ object.pk }}"></iframe>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
@@ -52,7 +52,7 @@
                                 <br>
                                 <div id="success"></div>
                                 <div class="row">
-                                    <div class="form-group col-xs-12">
+                                    <div class="form-group col-xs-12" id="{{ object.pk }}">
                                         <button id="sale_m" type="submit" class="btn btn-success btn-lg">Отправить</button>
                                     </div>
                                 </div>

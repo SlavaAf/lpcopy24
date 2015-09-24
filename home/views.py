@@ -94,6 +94,7 @@ def ajax_post_modal(request):
     if request.is_ajax():
         name = request.GET.get('name', None)
         mail = request.GET.get('mail', None)
+        pk = request.GET.get('pk', None)
         return HttpResponse(json.dumps({'error_code': 0}), content_type='application/json')
     else:
         return redirect(reverse_lazy('index'))

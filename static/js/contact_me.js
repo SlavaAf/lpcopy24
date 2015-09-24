@@ -81,6 +81,7 @@ $("#sale_m").click(function() {
             // get values from FORM
             var name = $("input#name").val();
             var email = $("input#email").val();
+            var pk_s = $('#sale_m').parent().attr('id');
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
@@ -92,7 +93,8 @@ $("#sale_m").click(function() {
                 url: '/ajax_post_modal/',
                 data: {
                     name: name,
-                    email: email
+                    email: email,
+                    pk: pk_s
                 },
                 //cache: false,
                 success: function() {
