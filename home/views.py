@@ -100,6 +100,14 @@ def ajax_post_modal(request):
         name = request.GET.get('name', None)
         mail = request.GET.get('email', None)
         pk = request.GET.get('pk', None)
+        db = DataBaseController()
+        site = Sites.objects.filter(id=pk)[0]
+        print(site.path_tar)
+        o = Order(name=name, mail=mail, s_name=site)
+        o.save()
+        send_mail_user(name, mail, site.path_tar)
         return HttpResponse(json.dumps({'error_code': 0}), content_type='application/json')
     else:
         return redirect(reverse_lazy('index'))
+
+    #digital ocean s.afonasiev@gmail.com 92dfktynbyf1793

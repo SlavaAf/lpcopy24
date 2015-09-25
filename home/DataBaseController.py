@@ -11,7 +11,7 @@ class DataBaseController:
 
     def get_site(self, url, data):
         list_sites = self.get_list_sites(url)
-        if len(list_sites) == 0:
+        if len(list_sites) == 0 and data != {}:
             site = Sites(name=data['name'], slug=data['slug'], url=data['url'], path_dir=data['path_dir'],
                          path_index=data['path_index'], path_img=data['path_img'],
                          path_tar=data['path_tar'])
