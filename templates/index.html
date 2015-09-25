@@ -3,7 +3,8 @@
 {% block content %}
     {% for object in object_list %}
         <div class="col-sm-4 portfolio-item" xmlns="http://www.w3.org/1999/html">
-            <a href="#portfolioModal{{ object.pk }}" class="portfolio-link" data-toggle="modal">
+{#            <a href="#portfolioModal{{ object.pk }}" class="portfolio-link" data-toggle="modal">#}
+            <a href="{% url 'site_index' object.pk %}" class="portfolio-link" data-toggle="modal">
 {#                <a href="{{ STATIC_URL }}sites/{{ object.name }}/{{ object.path_dir }}/index.html" class="portfolio-link">#}
 {#                <a class="portfolio-link" name="PK" value="{{ object.pk }}" href="{% url 'template_view' object.pk %}">#}
                 <div class="caption">
@@ -14,55 +15,5 @@
                 <img src="{{ object.path_img }}" class="img-responsive" alt="">
             </a>
         </div>
-    {% endfor %}
-{% endblock %}
-
-{% block content1 %}
-    {% for object in object_list %}
-    <div class="portfolio-modal modal fade" id="portfolioModal{{ object.pk }}" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <iframe src="{{ STATIC_URL }}sites/{{ object.name }}/{{ object.path_dir }}/index.html" width="100%" height="700px;" id="{{ object.pk }}"></iframe>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Купить</h2>
-                            <hr class="star-primary">
-                            <form name="sentMessage" id="contactForm" novalidate>
-                                <div class="row control-group">
-                                    <div class="form-group col-xs-12 floating-label-form-group controls">
-                                        <label>Name</label>
-                                        <input type="text" class="form-control" placeholder="Имя" id="name" required data-validation-required-message="Пожалуйста введите ваше имя.">
-                                        <p class="help-block text-danger"></p>
-                                    </div>
-                                </div>
-                                <div class="row control-group">
-                                    <div class="form-group col-xs-12 floating-label-form-group controls">
-                                        <label>Email Address</label>
-                                        <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Пожалуйста введите ваш E-mail.">
-                                        <p class="help-block text-danger"></p>
-                                    </div>
-                                </div>
-                                <br>
-                                <div id="success"></div>
-                                <div class="row">
-                                    <div class="form-group col-xs-12" id="{{ object.pk }}">
-                                        <button id="sale_m" type="submit" class="btn btn-success btn-lg">Отправить</button>
-                                    </div>
-                                </div>
-                            </form>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Закрыть</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     {% endfor %}
 {% endblock %}

@@ -25,6 +25,11 @@ def index_view(request):
     return render(request, 'index.html', {'object_list': object_list})
 
 
+def sites_view(request, pk):
+    site = Sites.objects.get(pk=pk)
+    return render(request, 'base_index.html', {'site': site})
+
+
 def url_validate(url):
     if str(url).find("http://") >= 0 or str(url).find("https://") >= 0:
         pass
@@ -93,7 +98,7 @@ def ajax_post_form(request):
 def ajax_post_modal(request):
     if request.is_ajax():
         name = request.GET.get('name', None)
-        mail = request.GET.get('mail', None)
+        mail = request.GET.get('email', None)
         pk = request.GET.get('pk', None)
         return HttpResponse(json.dumps({'error_code': 0}), content_type='application/json')
     else:

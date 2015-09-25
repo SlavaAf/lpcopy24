@@ -21,7 +21,7 @@
     <!-- Custom Fonts -->
     <link href="{{ STATIC_URL }}font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+{#    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">#}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#page-top">LpCopy24</a>
+                <a class="navbar-brand" href="{% url 'index' %}">LpCopy24</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -66,9 +66,9 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+    <iframe src="/{{ site.path_index }}" width="100%" height="700px;" id="{{ object.pk }}"></iframe>
+{#    <iframe src="{{ STATIC_URL }}sites/{{ site.name }}/{{ site.path_dir }}/index.html" width="100%" height="700px;" id="{{ site.pk }}"></iframe>#}
 
-    {% block content %}
-    {% endblock %}
     <!-- Portfolio Modals -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
@@ -82,10 +82,10 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>Купить шаблон</h2>
                             <hr class="star-primary">
-                            <img src="{{ STATIC_URL }}img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
-                            <p>Описание или реклама</p>
+                            <img src="/{{ site.path_img }}" class="img-responsive img-centered" alt="">
+{#                            <p>Описание или реклама</p>#}
                             <form name="sentMessage" id="contactForm" novalidate>
                                 <div class="row control-group">
                                     <div class="form-group col-xs-12 floating-label-form-group controls">
@@ -104,8 +104,8 @@
                                 <br>
                                 <div id="success"></div>
                                 <div class="row">
-                                    <div class="form-group col-xs-12">
-                                        <button type="submit" class="btn btn-success btn-lg">Отправить</button>
+                                    <div class="form-group col-xs-12" id="{{ site.pk }}">
+                                        <button id="sale_m" type="submit" class="btn btn-success btn-lg">Отправить</button>
                                     </div>
                                 </div>
                             </form>

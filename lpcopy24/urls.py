@@ -21,6 +21,7 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', index_view, name='index'),
+    url(r'^site/(?P<pk>[-_\w]+)/$', sites_view, name='site_index'),
     url(r'^ajax_post_form/$', ajax_post_form, name='ajax_post_form'),
     url(r'^ajax_post_modal/$', ajax_post_modal, name='ajax_post_modal'),
 ]
