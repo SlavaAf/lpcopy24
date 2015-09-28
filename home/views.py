@@ -5,6 +5,7 @@ import json
 from django.core.urlresolvers import reverse_lazy
 from home.DataBaseController import DataBaseController
 from home.models import *
+from home.replacer import Replacer
 
 from django.shortcuts import render, redirect
 from django.core.mail import EmailMessage
@@ -106,8 +107,8 @@ def ajax_post_modal(request):
         o = Order(name=name, mail=mail, s_name=site)
         o.save()
         send_mail_user(name, mail, site.path_tar)
+        rp = Replacer()
+        print(rp.replace_text(1, "<!DOCTYPE html>", "<Not !DOCTYPE html>"))
         return HttpResponse(json.dumps({'error_code': 0}), content_type='application/json')
     else:
         return redirect(reverse_lazy('index'))
-
-    #digital ocean s.afonasiev@gmail.com 92dfktynbyf1793
