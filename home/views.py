@@ -41,7 +41,7 @@ def url_validate(url):
 
 def send_mail_user(send_from, receiver, path_tar, subject="landing from lpcopy24.ru"):
     msg = MIMEMultipart(
-        From=send_from,
+        # From=send_from,
         To=COMMASPACE.join(receiver),
         Date=formatdate(localtime=True),
         Subject=subject
