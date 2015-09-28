@@ -21,11 +21,8 @@ class SiteParser:
         # Download site
         folder = ''.join(
             random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for x in range(16))
-        print(folder)
-        print(url)
         os.mkdir("static/sites/" + folder)
         subprocess.call(self.command + url + self.arch_folder + '/' + folder, shell=True)
-        print("Загрузка завершена")
         dirs = os.listdir("static/sites/" + folder)
 
         # Create tarfile
@@ -43,19 +40,15 @@ class SiteParser:
             # tar.add("static/sites/" + folder + '/' + dirs[0] + "/", folder)
             #
             # tar.close()
-            print("Архивирование завершено")
 
             # Get path to index.html
             index_files = self.find("index.html", "static/sites/" + folder)
 
             if len(index_files) > 0:
-                # print(index_files[0])
                 index_file = index_files[0]
             else:
                 index_file = "None"
-                # print("index.html not found")
             index_file.replace("\\", "/")
-            print("index.html найден", index_file)
 
             # save site image
             p = requests.get("http://mini.s-shot.ru/1024x768/360/png/?" + url)
@@ -63,7 +56,6 @@ class SiteParser:
             out = open(path_img, "wb")
             out.write(p.content)
             out.close()
-            print("Изображение загружено")
 
             result = {"url": url,
                       "name": folder,
