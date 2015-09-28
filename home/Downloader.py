@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# coding: utf-8
 import fnmatch
 import tarfile, os, subprocess, zipfile, tempfile
 import random
