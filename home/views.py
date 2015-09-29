@@ -12,8 +12,9 @@ from django.core.mail import EmailMessage
 
 from home.forms import *
 from home.Downloader import *
+from home.replacer import Replacer
 
-import smtplib
+import shutil
 from os.path import basename
 from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
@@ -65,7 +66,7 @@ def send_mail_user(send_from, receiver, path_tar, subject="landing from lpcopy24
 
 
 def ajax_post_form(request):
-    global site
+
     if request.is_ajax():
         db = DataBaseController()
         url = url_validate(request.GET.get('url', None))
@@ -89,7 +90,22 @@ def ajax_post_form(request):
         o.save()
 
         # send_to_mail_user
-        send_mail_user(user_name, user_mail, site.path_tar)
+        boll = request.GET.get('boll', False)
+        old_text = request.GET.get('old_text', "")
+        new_text = request.GET.get('new_text', "")
+
+        if not boll:
+            print("notnotnot")
+            send_mail_user(user_name, user_mail, site.path_tar)
+        else:
+            print("replacemotherfucker")
+            rp = Replacer()
+            temp_path = rp.replace_text(site.name, old_text, new_text)
+            if len(temp_path) > 0:
+                print("temp path = ", temp_path)
+                send_mail_user(user_name, user_mail, temp_path)
+                shutil.rmtree(temp_path[:-4])
+                # os.remove(temp_path)
 
         return HttpResponse(json.dumps({'error_code': 0}), content_type='application/json')
     else:
@@ -101,12 +117,26 @@ def ajax_post_modal(request):
         name = request.GET.get('name', None)
         mail = request.GET.get('email', None)
         pk = request.GET.get('pk', None)
+        boll = request.GET.get('boll', False)
+        old_text = request.GET.get('old_text', "")
+        new_text = request.GET.get('new_text', "")
         db = DataBaseController()
+
         site = Sites.objects.filter(id=pk)[0]
         print(site.path_tar)
         o = Order(name=name, mail=mail, s_name=site)
         o.save()
-        send_mail_user(name, mail, site.path_tar)
+
+        if not boll:
+            send_mail_user(name, mail, site.path_tar)
+        else:
+            rp = Replacer()
+            temp_path = rp.replace_text(site.name, old_text, new_text)
+            if len(temp_path) > 0:
+                send_mail_user(name, mail, temp_path)
+                shutil.rmtree(temp_path[:-4])
+                # os.remove(temp_path)
+
         return HttpResponse(json.dumps({'error_code': 0}), content_type='application/json')
     else:
         return redirect(reverse_lazy('index'))

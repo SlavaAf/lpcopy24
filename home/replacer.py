@@ -11,8 +11,7 @@ class Replacer:
     def __init__(self):
         pass
 
-    @staticmethod
-    def replace_text(name, old="", new=""):
+    def replace_text(self, name, old="", new=""):
         sites = Sites.objects.filter(name=name)
 
         if len(sites) > 0:
