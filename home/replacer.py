@@ -20,7 +20,7 @@ class Replacer:
                 shutil.copytree('static/sites/' + site.name, 'static/tmp/' + site.name)
 
                 path_index = "static/tmp/" + site.path_index[13:]
-                data = open(site.path_index).read()
+                data = open(str(site.path_index), encoding="utf8").read()
 
                 f = open(path_index, "w")
                 f.write(re.sub(old, new, data))
@@ -29,7 +29,6 @@ class Replacer:
                 zip_f = zipfile.ZipFile("static/tmp/" + site.name + ".zip", 'w')
                 for root, dir_files, files in os.walk("static/tmp/" + site.name):
                     for file in files:
-                        print(os.path.join(root, file))
                         zip_f.write(os.path.join(root, file))
                 zip_f.close()
 

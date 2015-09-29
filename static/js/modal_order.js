@@ -9,8 +9,7 @@ $(function() {
 
 
         submitSuccess: function($form, event) {
-            console.log($form.prop("class"));
-
+            var req = '/ajax_post_modal/';
             // Prevent spam click and default submit behaviour
             $("#sale_m").attr("disabled", true);
             event.preventDefault();
@@ -25,22 +24,16 @@ $(function() {
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
-            //post_form_json(name, url, email);
 
-            var req = '/ajax_post_form/';
             var data = {
                 name: name,
                 url: url,
                 email: email,
-                boll: $("#col_btn").attr("aria-expanded"),
-                pk: pk_s
+                boll: $("#col_btn").attr("aria-expanded") || false,
+                pk: pk_s,
+                old_text: $("input#old_text").val(),
+                new_text: $("input#new_text").val()
             };
-
-            if("btn-link collapsed" != $('#col_btn').prop('class')){
-                req = '/ajax_post_modal/';
-                data.old_text = $("input#old_text").val();
-                data.new_text = $("input#new_text").val();
-            }
 
             $.ajax({type: 'get',
                     url: req,
