@@ -14,6 +14,7 @@ class Replacer:
     @staticmethod
     def replace_text(name, old="", new=""):
         sites = Sites.objects.filter(name=name)
+
         if len(sites) > 0:
             site = sites[0]
             if not os.path.exists('static/tmp/'+site.name):
