@@ -11,29 +11,27 @@ class Replacer:
     def __init__(self):
         pass
 
-    def replace_text(self, id, old="", new=""):
-        site = Sites.objects.filter(id=id)[0]
-        shutil.copytree('static/sites/' + site.name, 'static/tmp')
+    @staticmethod
+    def replace_text(name, old="", new=""):
+        sites = Sites.objects.filter(name=name)
+        if len(sites) > 0:
+            site = sites[0]
+            if not os.path.exists('static/tmp/'+site.name):
+                shutil.copytree('static/sites/' + site.name, 'static/tmp/' + site.name)
 
-        data = open(id).read()
-        path_index = "static/tmp/" + site.path_index[13:]
-        f = open("static/tmp/" + path_index[13:], "w")
-        f.write(re.sub(old, new, data))
-        f.close()
+                path_index = "static/tmp/" + site.path_index[13:]
+                data = open(site.path_index).read()
 
-        zip_f = zipfile.ZipFile("static/tmp/" + site.name + ".zip", 'w')
-        for root, dir_files, files in os.walk("static/tmp/" + site.name):
-            for file in files:
-                print(os.path.join(root, file))
-                zip_f.write(os.path.join(root, file))
-        zip_f.close()
+                f = open(path_index, "w")
+                f.write(re.sub(old, new, data))
+                f.close()
 
-        return "static/tmp/" + site.name + ".zip"
+                zip_f = zipfile.ZipFile("static/tmp/" + site.name + ".zip", 'w')
+                for root, dir_files, files in os.walk("static/tmp/" + site.name):
+                    for file in files:
+                        print(os.path.join(root, file))
+                        zip_f.write(os.path.join(root, file))
+                zip_f.close()
 
-
-rp = Replacer()
-
-rp.replace_text("in", u''' <script src="scripts/museredirect.js@490478987" type="text/javascript"></script>
-
-  <script type="text/javascript">''', u'''У попа была собака, он ее любил,
-она съела кусок мяса, он ее убил''')
+                return "static/tmp/" + site.name + ".zip"
+        return ""
