@@ -101,6 +101,27 @@
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>
+                                <button id="col_btn" class="btn-link" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    Замена текста в копии
+                                </button>
+                                <div class="collapse" id="collapseExample">
+                                    <div class="well">
+                                        <div class="row control-group">
+                                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                                <label>Old text</label>
+                                                <input type="text" class="form-control" placeholder="Старый текст" id="old_text" required data-validation-required-message="Пожалуйста введите текст который надо заменить.">
+                                                <p class="help-block text-danger"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row control-group">
+                                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                                <label>New text</label>
+                                                <input type="text" class="form-control" placeholder="Новый текст" id="new_text" required data-validation-required-message="Пожалуйста введите новый текст.">
+                                                <p class="help-block text-danger"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <br>
                                 <div id="success"></div>
                                 <div class="row">
