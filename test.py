@@ -38,6 +38,7 @@ class AmariModel(object):
 
 class AmariMazeGenerator(object):
 
+
     def __init__(self, size):
         self.model = AmariModel(size)
 
